@@ -1,0 +1,57 @@
+@import "./variables.scss";
+
+.container {
+  width: 100%;
+  max-width: $breakpoint-sm;
+  margin: auto;
+  height: 100%;
+  padding: 30px 20px 0px;
+}
+
+.gap {
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.color-principal {
+  color: $color-principal;
+}
+
+.color-typo {
+  color: $color-typography;
+}
+
+.title {
+  font-size: $size-title;
+}
+
+.subtitle {
+  font-family: $font-subtitle;
+  font-size: $size-subtitle;
+}
+
+.body {
+  font-size: $size-body;
+}
+
+.amplify-input {
+  padding: 10px !important;
+  font-size: $size-body !important;
+  box-shadow: none !important;
+}
+
+.amplify-button {
+  box-shadow: none !important;
+}

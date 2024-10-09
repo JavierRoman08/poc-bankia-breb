@@ -1,0 +1,29 @@
+.option {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 0px auto;
+    background: none;
+    
+    &__icon, &__bre_b {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon {
+        background-color: #D4D4FF;
+    }
+
+    &__bre_b {
+        background-color: rgba(0, 195, 255, 1);
+    }
+    
+}

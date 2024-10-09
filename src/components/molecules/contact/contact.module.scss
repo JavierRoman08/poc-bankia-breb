@@ -1,0 +1,34 @@
+@import "@styles/variables.scss";
+
+.contactItem {
+    width: 100%;
+    border-bottom: 1px solid rgba(137, 148, 159, 1);
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+
+    &__data {
+        align-items: center;
+        font-size: 14px;
+    }
+}
+
+.icon, .userIcon, .isFavorite {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgba(239, 240, 240, 1);
+    width: 30px;
+    height: 30px;
+    color: rgba(137, 148, 159, 1);
+}
+
+.userIcon {
+    color: $color-typography;
+    background-color: rgba(242, 242, 255, 1);
+}
+
+.isFavorite {
+    color: $color-white;
+    background-color: rgba(102, 220, 255, 1);
+}

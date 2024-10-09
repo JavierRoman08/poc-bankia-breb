@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bankia-dev-7eb5e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::588738598418:role/amplify-bankia-dev-7eb5e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::588738598418:role/amplify-bankia-dev-7eb5e-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-bankia-dev-7eb5e-deployment",
+      "UnauthRoleName": "amplify-bankia-dev-7eb5e-unauthRole",
+      "StackName": "amplify-bankia-dev-7eb5e",
+      "StackId": "arn:aws:cloudformation:us-east-2:588738598418:stack/amplify-bankia-dev-7eb5e/530d2ad0-81aa-11ef-b064-06f61369a55f",
+      "AmplifyAppId": "d2si2j7yzwkgbv"
+    }
+  }
+}

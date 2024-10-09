@@ -1,0 +1,42 @@
+@import "@styles/variables.scss";
+
+.login {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 586px;
+    margin: auto;
+    gap: 30px !important;
+
+    h2 {
+        font-size: 26px !important;
+        font-family: $font-subtitle;
+        font-weight: 600;
+        line-height: 30px;
+    }
+
+    p {
+        font-family: $font-subtitle;
+        font-weight: 400;
+    }
+    
+    &__subtitle {
+        flex: 1;
+        align-content: center;
+        text-align: left !important;
+        padding: 0px 20px;
+        gap: 30px;
+    }
+}
+
+.btn {
+    width: 90%;
+    max-width: 300px;
+    margin: 30px auto;
+    padding: 10px 30px;
+    background: linear-gradient(110.68deg, #5452F7 1.52%, #6429CD 26.95%, #B100A3 138.13%);
+    color: $color-white;
+    font-weight: 700;
+    border-radius: 10px;
+}

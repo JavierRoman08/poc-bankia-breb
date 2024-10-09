@@ -1,0 +1,40 @@
+@import "@styles/variables.scss";
+
+.navbar, .navbar_bottom {
+    justify-content: space-between;
+}
+
+.optionsContainer {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+
+    &__item, &__breb {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 120px !important;
+        margin: auto !important;
+        text-align: center !important;
+        cursor: pointer !important;
+    }
+
+    &__breb {
+        gap: 10px;
+        flex-direction: column;
+        justify-content: flex-start !important;
+    }
+}
+
+.navbar_bottom {
+    position: fixed;
+    width: 100%;
+    margin: 0px auto;
+    z-index: 30;
+    background-color: $color-white;
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0px -3px 6px 0px rgba(0, 0, 0, 0.16);
+}
