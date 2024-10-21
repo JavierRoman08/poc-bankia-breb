@@ -11,6 +11,11 @@ import AccountPhone from './components/pages/home/bre-b/account/phone';
 import AccountKey from './components/pages/home/bre-b/account/key';
 import AccountCode from './components/pages/home/bre-b/account/code';
 import AccountMail from './components/pages/home/bre-b/account/mail';
+import Amount from './components/pages/home/bre-b/transfer/amount';
+import AccountFrom from './components/pages/home/bre-b/transfer/account_from';
+import Resume from './components/pages/home/bre-b/transfer/resume';
+import AuthCode from './components/pages/home/bre-b/transfer/auth-code';
+import TransferCompleted from './components/pages/home/bre-b/transfer/transfer-complete';
 
 const router = createBrowserRouter([
   {
@@ -33,8 +38,27 @@ const router = createBrowserRouter([
   {
     path: '/home/bre-b/transfer',
     element: <Transfer />
-  }
-  ,
+  },
+  {
+    path: '/home/bre-b/transfer/amount',
+    element: <Amount />
+  },
+  {
+    path: '/home/bre-b/transfer/from',
+    element: <AccountFrom />
+  },
+  {
+    path: '/home/bre-b/transfer/resume',
+    element: <Resume />
+  },
+  {
+    path: '/home/bre-b/transfer/verification',
+    element: <AuthCode />
+  },
+  {
+    path: '/home/bre-b/transfer/completed',
+    element: <TransferCompleted />
+  },
   {
     path: '/home/bre-b/transfer/select-account',
     element: <SelectAccount />

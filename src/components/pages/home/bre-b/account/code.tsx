@@ -8,7 +8,7 @@ function AccountCode() {
       accountType={"Codigo de establecimiento"}
     >
       <p>Numero de establecimiento</p>
-      <Input variation="quiet" placeholder="Baggins" />
+      <Input variation="quiet" placeholder="Escribe el codigo de establecimiento" />
       
     </AccountTypeTemplate>
   );

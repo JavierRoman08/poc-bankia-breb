@@ -7,7 +7,8 @@ import BreBLayout from "@/components/templates/breb.layout";
 import { ChevronRight, DollarSign } from "react-feather";
 import Seccion from "@/ui-components/Seccion";
 import { IoSwapHorizontal } from "react-icons/io5";
-import { MdClose, MdQrCodeScanner } from "react-icons/md";
+import { MdQrCodeScanner } from "react-icons/md";
+import CustomModal from "@/components/molecules/modal/modal";
 
 function BreB() {
   const [isModalActive, setIsModalActive] = useState(false);
@@ -23,9 +24,7 @@ function BreB() {
 
   return (
     <>
-      <section
-        className={`${styles.homeBreB} ${isModalActive ? styles.blurred : ""}`}
-      >
+      <section className={`${styles.homeBreB} ${isModalActive ? 'blurred' : ''}`}>
         <BreBLayout>
           <img src="/card-qr.svg" alt="card_qr_img" className="align-center" />
           <Spacer height={20} />
@@ -59,7 +58,7 @@ function BreB() {
             className={styles.cardPrompt}
             cardprompt={
               <div className={`${styles.cardPrompt__content} row align-center`}>
-                <p>Con llave</p>
+                <p>Mis llave</p>
                 <ChevronRight />
               </div>
             }
@@ -84,12 +83,8 @@ function BreB() {
           />
         </BreBLayout>
       </section>
-      {isModalActive ? (
-        <div className={styles.modal}>
-          <div className={styles.modal__close}>
-            <MdClose onClick={handleTrasnfer} size={25} />
-          </div>
-          <h2 className="subtitle">Como deseas transferir?</h2>
+      <CustomModal isOpen={isModalActive} handleModal={handleTrasnfer}>
+      <h2 className="subtitle">Como deseas transferir?</h2>
           <Spacer height={10} />
           <p>Selecciona el medio que deseas Trasferir o pagar</p>
           <Spacer height={20} />
@@ -112,8 +107,7 @@ function BreB() {
               </div>
             }
           />
-        </div>
-      ) : null}
+      </CustomModal>
     </>
   );
 }
