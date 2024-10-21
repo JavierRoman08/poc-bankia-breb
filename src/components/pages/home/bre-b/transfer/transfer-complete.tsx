@@ -1,11 +1,11 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import styles from "./transfer.module.scss";
-import { Button, Input, TextField } from "@aws-amplify/ui-react";
+import { Button, TextField } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FiInfo } from "react-icons/fi";
 import Seccion from "@/ui-components/Seccion";
-import { DollarSign, FileText, RotateCw, Star } from "react-feather";
+import { FileText, RotateCw, Star } from "react-feather";
 
 function TransferCompleted() {
   const history = useNavigate();
