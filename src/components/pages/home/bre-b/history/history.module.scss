@@ -1,0 +1,15 @@
+.account {
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 10px;
+    background-color: #80F5D0;
+
+    &__info {
+        align-items: center;
+        justify-content: space-between;
+
+        div:last-child {
+            text-align: end;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import "@styles/variables.scss";
+
+.container {
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    text-align: left !important;
+    justify-content: space-between;
+    border-bottom: 2px solid #89949F;
+    
+
+    &__data {
+        p {
+            font-size: $size-tiny;
+            font-weight: 600;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    &__options {
+        p {
+            font-weight: 500 !important;
+            color: #ED0039;
+        }
+    }
+}

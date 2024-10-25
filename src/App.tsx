@@ -6,16 +6,19 @@ import HomePage from '@components/pages/home/home';
 import BreB from '@components/pages/home/bre-b/bre-b';
 import Transfer from '@components/pages/home/bre-b/transfer';
 import SelectAccount from '@components/pages/home/bre-b/select-account';
-import AccountDocument from './components/pages/home/bre-b/account/document';
-import AccountPhone from './components/pages/home/bre-b/account/phone';
-import AccountKey from './components/pages/home/bre-b/account/key';
-import AccountCode from './components/pages/home/bre-b/account/code';
-import AccountMail from './components/pages/home/bre-b/account/mail';
-import Amount from './components/pages/home/bre-b/transfer/amount';
-import AccountFrom from './components/pages/home/bre-b/transfer/account_from';
-import Resume from './components/pages/home/bre-b/transfer/resume';
-import AuthCode from './components/pages/home/bre-b/transfer/auth-code';
-import TransferCompleted from './components/pages/home/bre-b/transfer/transfer-complete';
+import AccountDocument from '@components/pages/home/bre-b/account/document';
+import AccountPhone from '@components/pages/home/bre-b/account/phone';
+import AccountKey from '@components/pages/home/bre-b/account/key';
+import AccountCode from '@components/pages/home/bre-b/account/code';
+import AccountMail from '@components/pages/home/bre-b/account/mail';
+import Amount from '@components/pages/home/bre-b/transfer/amount';
+import AccountFrom from '@components/pages/home/bre-b/transfer/account_from';
+import Resume from '@components/pages/home/bre-b/transfer/resume';
+import AuthCode from '@components/pages/home/bre-b/transfer/auth-code';
+import TransferCompleted from '@components/pages/home/bre-b/transfer/transfer-complete';
+import QrCode from '@components/pages/home/bre-b/qr/qr-code';
+import History from '@components/pages/home/bre-b/history/history';
+import Request from '@components/pages/home/bre-b/history/request';
 
 const router = createBrowserRouter([
   {
@@ -33,8 +36,19 @@ const router = createBrowserRouter([
   {
     path: '/home/bre-b',
     element: <BreB />
-  }
-  ,
+  },
+  {
+    path: '/home/bre-b/history',
+    element: <History />
+  },
+  {
+    path: '/home/bre-b/history/request',
+    element: <Request />
+  },
+  {
+    path: '/home/bre-b/scan-qr',
+    element: <QrCode />
+  },
   {
     path: '/home/bre-b/transfer',
     element: <Transfer />

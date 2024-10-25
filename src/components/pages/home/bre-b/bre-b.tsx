@@ -22,6 +22,14 @@ function BreB() {
     history("/home/bre-b/transfer");
   };
 
+  const goToHistory = () => {
+    history("/home/bre-b/history");
+  };
+
+  const scanQrCode = () => {
+    history("/home/bre-b/scan-qr");
+  };
+
   return (
     <>
       <section className={`${styles.homeBreB} ${isModalActive ? 'blurred' : ''}`}>
@@ -38,13 +46,11 @@ function BreB() {
               onClick={handleTrasnfer}
               className={styles.optionsContainer__item}
             />
-
             <Seccion
               frame31304={<MdQrCodeScanner size={35} />}
               label={"Mis Codigos QR"}
               className={styles.optionsContainer__item}
             />
-
             <Seccion
               frame31304={<DollarSign size={35} />}
               label={"Cobrar a alguien"}
@@ -58,7 +64,7 @@ function BreB() {
             className={styles.cardPrompt}
             cardprompt={
               <div className={`${styles.cardPrompt__content} row align-center`}>
-                <p>Mis llave</p>
+                <p>Mis llaves</p>
                 <ChevronRight />
               </div>
             }
@@ -71,6 +77,7 @@ function BreB() {
                 <ChevronRight />
               </div>
             }
+            onClick={goToHistory}
           />
           <Cardprompt
             className={styles.cardPrompt}
@@ -106,6 +113,7 @@ function BreB() {
                 <ChevronRight />
               </div>
             }
+            onClick={scanQrCode}
           />
       </CustomModal>
     </>
