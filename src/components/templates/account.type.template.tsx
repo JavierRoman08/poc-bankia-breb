@@ -1,14 +1,8 @@
 import { Button } from "@aws-amplify/ui-react";
 import Spacer from "../atoms/spacer/spacer";
 import BreBLayout from "./breb.layout";
-import { useNavigate } from "react-router-dom";
 
-function AccountTypeTemplate({ imgURL, accountType, children }: any) {
-  const history = useNavigate();
-
-  const goTransfer = () => {
-    history("/home/bre-b/transfer/amount");
-  };
+function AccountTypeTemplate({ imgURL, accountType, onClickFn, children }: any) {
 
   return (
     <BreBLayout>
@@ -24,7 +18,7 @@ function AccountTypeTemplate({ imgURL, accountType, children }: any) {
       {children}
       <Spacer />
       <div className="align-center">
-        <Button className={`btn-enabled`} onClick={goTransfer}>
+        <Button className={`btn-enabled`} onClick={onClickFn}>
           Continuar
         </Button>
       </div>

@@ -1,3 +1,4 @@
+import Spacer from "@/components/atoms/spacer/spacer";
 import styles from "./modal.module.scss";
 import { MdClose } from "react-icons/md";
 
@@ -16,6 +17,7 @@ const CustomModal = ({ isOpen, handleModal, children }: ModalProps) => {
         <MdClose onClick={handleModal} size={25} />
       </div>
       {children}
+      <Spacer height={20} />
     </div>
   );
 };

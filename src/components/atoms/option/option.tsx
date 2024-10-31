@@ -10,9 +10,9 @@ const Option = ({ icon, label, onClickFn }: OptionProps) => {
   return (
     <button className={`${styles.option} row`} onClick={onClickFn}>
       <span className="tiny">{label}</span>
-      <div className={`${styles.icon} circle`}>
+      <i className={`${styles.icon} row circle`}>
         {icon}
-      </div>
+      </i>
     </button>
   );
 };

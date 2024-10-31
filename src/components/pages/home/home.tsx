@@ -22,7 +22,7 @@ function HomePage() {
   const history = useNavigate();
 
   const goToBreB = () => {
-    history("/home/bre-b");
+    history("bre-b");
   };
 
   return (
