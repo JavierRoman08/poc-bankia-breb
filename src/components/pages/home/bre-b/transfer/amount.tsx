@@ -21,7 +21,7 @@ function Amount() {
           <Input variation="quiet" placeholder="$0" type="number" />
           <Spacer />
         </div>
-        <div className={`${styles.btn} ${styles.container__content} align-center`}>
+        <div className={`${styles.btn} align-center`}>
           <Button className={`btn-enabled`} onClick={selectAccountFrom}>Continuar</Button>
         </div>
         <Spacer/>

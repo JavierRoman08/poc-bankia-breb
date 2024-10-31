@@ -4,7 +4,11 @@ import LogoBWithText from "@/ui-components/LogoBWithText";
 import Spacer from "@/components/atoms/spacer/spacer";
 import { useNavigate } from "react-router-dom";
 
-function BreBNavbar() {
+interface BreBNavbarProps {
+  title?: string;
+}
+
+const BreBNavbar = ({title}: BreBNavbarProps) => {
   const history = useNavigate();
 
   const goBack = () => {
@@ -16,7 +20,7 @@ function BreBNavbar() {
       <ChevronLeft className={styles.arrow} size={30} onClick={goBack} />
       <LogoBWithText className={styles.icon} />
       <Spacer height={10} />
-      <p className="body">Pagos inmediatos</p>
+      <p className="body">{title ?? 'Pagos inmediatos' }</p>
     </nav>
   );
 }

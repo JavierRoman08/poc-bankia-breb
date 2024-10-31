@@ -5,6 +5,19 @@
     height: 100%;
     min-height: 100vh;
     padding: 20px;
+    background-image: url('/public/qr_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.container::before {
+    content: '';
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    position: absolute;
     background-color: #32005ECC;
 }
 
@@ -13,6 +26,7 @@
     flex-direction: column;
     text-align: center;
     color: $color-white;
+    z-index: 2;
 
     .arrow {
         position: absolute;
@@ -27,6 +41,7 @@
     flex-direction: column;
     flex: 1 !important;
     color: $color-white;
+    z-index: 2;
 }
 
 .qrImage  {
@@ -59,6 +74,10 @@
         margin: auto !important;
         text-align: center !important;
         cursor: pointer !important;
+
+        p {
+            color: white !important;
+        }
     }
 
     &__item:focus {

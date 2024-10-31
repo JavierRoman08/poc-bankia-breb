@@ -18,7 +18,11 @@ import AuthCode from '@components/pages/home/bre-b/transfer/auth-code';
 import TransferCompleted from '@components/pages/home/bre-b/transfer/transfer-complete';
 import QrCode from '@components/pages/home/bre-b/qr/qr-code';
 import History from '@components/pages/home/bre-b/history/history';
-import Request from '@components/pages/home/bre-b/history/request';
+import Keys from '@components/pages/home/bre-b/keys/keys';
+import KeysSelectAccount from './components/pages/home/bre-b/keys/select-account';
+import ConfirmKey from '@/components/pages/home/bre-b/keys/confirm';
+import ReturnConfirmRequest from '@components/pages/home/bre-b/history/request';
+import KeyCreationComplete from './components/pages/home/bre-b/keys/key.creation';
 
 const router = createBrowserRouter([
   {
@@ -38,12 +42,28 @@ const router = createBrowserRouter([
     element: <BreB />
   },
   {
+    path: '/home/bre-b/my-keys',
+    element: <Keys />
+  },
+  {
+    path: '/home/bre-b/my-keys/select-account',
+    element: <KeysSelectAccount />
+  },
+  {
+    path: '/home/bre-b/my-keys/select-account/confirm',
+    element: <ConfirmKey />
+  },
+  {
+    path: '/home/bre-b/my-keys/select-account/confirm/finish',
+    element: <KeyCreationComplete />
+  },
+  {
     path: '/home/bre-b/history',
     element: <History />
   },
   {
     path: '/home/bre-b/history/request',
-    element: <Request />
+    element: <ReturnConfirmRequest />
   },
   {
     path: '/home/bre-b/scan-qr',

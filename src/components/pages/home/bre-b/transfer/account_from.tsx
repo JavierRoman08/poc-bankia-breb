@@ -22,7 +22,7 @@ function AccountFrom() {
         <div>
           <Cardprompt
             onClick={goResumen}
-            backgroundColor={"#E6EEFE"}
+            backgroundColor={"#F2F2FF"}
             className={styles.cardPrompt}
             cardprompt={
               <div className={`${styles.cardPrompt__content} row align-center`}>
@@ -40,7 +40,7 @@ function AccountFrom() {
           <Spacer height={20} />
           <Cardprompt
             onClick={goResumen}
-            backgroundColor={"#E6EEFE"}
+            backgroundColor={"#F2F2FF"}
             className={styles.cardPrompt}
             cardprompt={
               <div className={`${styles.cardPrompt__content} row align-center`}>

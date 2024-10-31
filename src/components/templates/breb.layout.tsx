@@ -1,10 +1,15 @@
 import BreBNavbar from "../molecules/bre-b-navbar/bre-b.navbar";
 import styles from './breb.layout.module.scss';
 
-function BreBLayout({children}: any) {
+interface BreBLayoutProps {
+  title?: string;
+  children: any;
+}
+
+const BreBLayout = ({title, children}: BreBLayoutProps) => {
   return (
     <main className={styles.container}>
-      <BreBNavbar />
+      <BreBNavbar title={title}/>
       <section className="container" style={{flex: 1 }}>
         {children}
       </section>

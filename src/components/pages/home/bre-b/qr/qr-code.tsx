@@ -8,18 +8,17 @@ import Spacer from "@/components/atoms/spacer/spacer";
 function QrCode() {
   const history = useNavigate();
 
-  const goToBreB = () => {
-    history("/home/bre-b");
+  const goBack = () => {
+    history(-1);
   };
 
   return (
-    <section className={`${styles.container}`}>
+    <section className={`${styles.container} col`}>
       <nav className={`${styles.navbar}`}>
-        <ChevronLeft className={styles.arrow} size={30} />
+        <ChevronLeft className={styles.arrow} size={30} onClick={goBack}/>
         <h1 className="subtitle  bold">Escanea Qr</h1>
       </nav>
       <div className={styles.content}>
-        <Spacer />
         <div>
           <h2 className="subtitle align-center">Pagar con Qr</h2>
           <Spacer />

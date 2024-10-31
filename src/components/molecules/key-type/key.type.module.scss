@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    justify-content: space-between;
+    background-color: #E6EEFE;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.icon {
+    padding: 10px;
+    background-color: #A6EDD6 !important;
+}
+
+.title {
+    max-width: 85px;
+    text-align: left;
+}

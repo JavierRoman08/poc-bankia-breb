@@ -30,6 +30,10 @@ function BreB() {
     history("/home/bre-b/scan-qr");
   };
 
+  const goMyKeys = () => {
+    history("/home/bre-b/my-keys");
+  };
+
   return (
     <>
       <section className={`${styles.homeBreB} ${isModalActive ? 'blurred' : ''}`}>
@@ -68,6 +72,7 @@ function BreB() {
                 <ChevronRight />
               </div>
             }
+            onClick={goMyKeys}
           />
           <Cardprompt
             className={styles.cardPrompt}
