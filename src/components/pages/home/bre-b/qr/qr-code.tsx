@@ -12,24 +12,30 @@ function QrCode() {
     history(-1);
   };
 
+  const continueTransfer = () => {
+    history('/home/bre-b/transfer/from')
+  }
+
   return (
     <section className={`${styles.container} col`}>
       <nav className={`${styles.navbar}`}>
-        <ChevronLeft className={styles.arrow} size={30} onClick={goBack}/>
+        <ChevronLeft className={styles.arrow} size={30} onClick={goBack} />
         <h1 className="subtitle  bold">Escanea Qr</h1>
       </nav>
       <div className={styles.content}>
-        <div>
+        
+          <div>
           <h2 className="subtitle align-center">Pagar con Qr</h2>
           <Spacer />
-          <img
-            src="/qr-code.png"
-            alt="qr-code"
-            className={`${styles.qrImage} align-center`}
-          />
-        </div>
-        <Spacer />
-        <div className={styles.optionsContainer}>
+          <button className="align-center" onClick={continueTransfer}>
+            <img
+              src="/qr-code.png"
+              alt="qr-code"
+              className={`${styles.qrImage} `}
+            />
+          </button>
+          </div>
+          <div className={styles.optionsContainer}>
           <div>
             <Seccion
               frame31304={<PiFlashlight size={35} />}
@@ -42,7 +48,7 @@ function QrCode() {
             <Seccion
               frame31304={<Image size={35} />}
               color={"black"}
-              label={'Imagen'}
+              label={"Imagen"}
               className={styles.optionsContainer__item}
             />
           </div>

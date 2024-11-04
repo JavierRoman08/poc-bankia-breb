@@ -42,25 +42,25 @@ function SelectAccount() {
         />
         <Seccion
           frame31304={<Smartphone size={35} />}
-          label={"Numero de celular"}
+          label={"Número de celular"}
           className={styles.accountOptionsContainer__item}
           onClick={goPhone}
         />
         <Seccion
           frame31304={<Mail size={35} />}
-          label={"Correo electronico"}
+          label={"Correo electrónico"}
           className={styles.accountOptionsContainer__item}
           onClick={goEmail}
         />
         <Seccion
           frame31304={<Lock size={35} />}
-          label={"Clave Personalizada"}
+          label={"Clave personalizada"}
           className={styles.accountOptionsContainer__item}
           onClick={goKey}
         />
         <Seccion
           frame31304={<BiBuilding size={35} />}
-          label={"Codigo de establecimiento"}
+          label={"Código de establecimiento"}
           className={styles.accountOptionsContainer__item}
           onClick={goCode}
         />

@@ -26,13 +26,14 @@ function AccountCode({ route }: any) {
       <section className={`${isModalActive ? "blurred" : ""}`}>
         <AccountTypeTemplate
           imgURL={"/img-codigo-establecimiento.svg"}
-          accountType={"Codigo de establecimiento"}
+          accountType={"Código de establecimiento"}
           onClickFn={handleClick}
+          title={`Agregar nueva cuenta`}
         >
-          <p>Numero de establecimiento</p>
+          <p>Código de establecimiento</p>
           <Input
             variation="quiet"
-            placeholder="Escribe el codigo de establecimiento"
+            placeholder="Escribe el código de establecimiento"
             value={code}
             onChange={(e) => {
               setCode(e.target.value);

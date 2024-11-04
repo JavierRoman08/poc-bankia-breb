@@ -98,8 +98,8 @@
 }
 
 .btn-disabled {
-  background-color: #EFF0F0;
-  color: #89949F;
+  background-color: #EFF0F0 !important;
+  color: #89949F !important;
   pointer-events: none !important;
 }
 
@@ -113,7 +113,9 @@
 
 .amplify-button {
   width: 100% !important;
+  padding: 12px !important;
   box-shadow: none !important;
+  border: none !important;
 }
 
 .amplify-switch__track--focused {

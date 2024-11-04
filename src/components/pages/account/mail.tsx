@@ -27,10 +27,11 @@ function AccountMail({ route }: any) {
       <section className={`${isModalActive ? "blurred" : ""}`}>
     <AccountTypeTemplate
       imgURL={"/img-correo-electronico.svg"}
-      accountType={"Correo electronico"}
+      accountType={"Correo electrónico"}
       onClickFn={handleClick}
+      title={`Agregar nueva cuenta`}
     >
-      <p>Correo electronico</p>
+      <p>Correo electrónico</p>
       <Input
         variation="quiet"
         placeholder="Ingresa tu correo"

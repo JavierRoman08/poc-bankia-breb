@@ -27,10 +27,11 @@ function AccountPhone({ route }: any) {
       <section className={`${isModalActive ? "blurred" : ""}`}>
         <AccountTypeTemplate
           imgURL={"/img-numero-celular.svg"}
-          accountType={"Numero de celular"}
+          accountType={"Número de celular"}
           onClickFn={handleClick}
+          title={`Agregar nueva cuenta`}
         >
-          <p>Numero de celular</p>
+          <p>Número de celular</p>
           <PhoneNumberField
             type="tel"
             defaultDialCode="+57"

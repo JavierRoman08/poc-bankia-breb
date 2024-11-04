@@ -29,6 +29,7 @@ function AccountKey({ route }: any) {
           imgURL={"/img-clave-personalizada.svg"}
           accountType={"Clave personalizada"}
           onClickFn={handleClick}
+          title={`Agregar nueva cuenta`}
         >
           <p>Clave personalizada</p>
           <Input

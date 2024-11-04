@@ -49,10 +49,10 @@ function AuthCode() {
         ))}
         </div>
         <Spacer />
-        <p className="align-center">¿No has obtenido el codigo OTP?</p>
+        <p className="align-center">¿No has obtenido el código OTP?</p>
         <Spacer />
         <div className={`${styles.link} align-center bold`}>
-          Reenviar codigo
+          Reenviar código
         </div>
         <div className={`${styles.btn} ${styles.container__content} align-center`}>
           <Button className={code.every((value) => value !== '') ? `btn-enabled` : `btn-disabled`} onClick={completeTransfer}>

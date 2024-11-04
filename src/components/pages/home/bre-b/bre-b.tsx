@@ -52,7 +52,7 @@ function BreB() {
             />
             <Seccion
               frame31304={<MdQrCodeScanner size={35} />}
-              label={"Mis Codigos QR"}
+              label={"Mis Código QR"}
               className={styles.optionsContainer__item}
             />
             <Seccion
@@ -96,9 +96,9 @@ function BreB() {
         </BreBLayout>
       </section>
       <CustomModal isOpen={isModalActive} handleModal={handleTrasnfer}>
-      <h2 className="subtitle">Como deseas transferir?</h2>
+      <h2 className="subtitle">¿Cómo deseas transferir?</h2>
           <Spacer height={10} />
-          <p>Selecciona el medio que deseas Trasferir o pagar</p>
+          <p>Selecciona el medio con el que deseas transferir o pagar</p>
           <Spacer height={20} />
           <Cardprompt
             className={styles.cardPrompt}
@@ -114,7 +114,7 @@ function BreB() {
             className={styles.cardPrompt}
             cardprompt={
               <div className={`${styles.cardPrompt__content} row align-center`}>
-                <p>Leer codigo QR</p>
+                <p>Leer código QR</p>
                 <ChevronRight />
               </div>
             }

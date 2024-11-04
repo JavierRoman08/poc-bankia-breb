@@ -28,11 +28,12 @@ function AccountDocument({ route }: any) {
           imgURL={"/img-documento-identidad.svg"}
           accountType={"Documento de identidad"}
           onClickFn={handleClick}
+          title={`Agregar nueva cuenta`}
         >
-          <p>Numero de documento</p>
+          <p>Número de documento</p>
           <Input
             variation="quiet"
-            placeholder="Escriba el numero de documento"
+            placeholder="Escriba el número de documento"
             value={document}
             onChange={(e) => {
               setDocument(e.target.value);

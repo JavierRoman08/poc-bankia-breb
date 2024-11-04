@@ -15,7 +15,7 @@ function AccountFrom() {
   return (
     <BreBLayout>
       <div className={styles.container}>
-        <p>Desde donde vas a transferir?</p>
+        <p>¿Desde dónde vas a transferir?</p>
         <Spacer />
         <h2 className="body">Cuenta de ahorro</h2>
         <Spacer />

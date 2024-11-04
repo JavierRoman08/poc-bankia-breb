@@ -2,10 +2,10 @@ import { Button } from "@aws-amplify/ui-react";
 import Spacer from "../atoms/spacer/spacer";
 import BreBLayout from "./breb.layout";
 
-function AccountTypeTemplate({ imgURL, accountType, onClickFn, children }: any) {
+function AccountTypeTemplate({ imgURL, accountType, title, onClickFn, children }: any) {
 
   return (
-    <BreBLayout>
+    <BreBLayout title={title}>
       <p>Haz seleccionado</p>
       <h2 className="subtitle">{accountType}</h2>
       <Spacer />

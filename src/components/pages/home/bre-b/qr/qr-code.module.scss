@@ -8,6 +8,7 @@
     background-image: url('/public/qr_bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     z-index: 1;
 }
 
@@ -42,6 +43,13 @@
     flex: 1 !important;
     color: $color-white;
     z-index: 2;
+    justify-content: center;
+    gap: 100px;
+
+    h2 {
+        margin: 0px !important;
+    }
+    
 }
 
 .qrImage  {
@@ -62,7 +70,6 @@
 
 .optionsContainer {
     width: 100%;
-    margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
