@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./key.card.module.scss";
-import { ChevronDown, ChevronUp, Edit, Eye, EyeOff, Share2 } from "react-feather";
+import { ChevronDown, ChevronUp, Edit, EyeOff, Share2 } from "react-feather";
 import KeyType from "../key-type/key.type";
 import { SwitchField } from "@aws-amplify/ui-react";
 import Spacer from "@/components/atoms/spacer/spacer";
@@ -41,7 +41,7 @@ const KeyCard = ({
       <div className="row align-center">
         <KeyType
           icon={icon}
-          optionIcon={undefined}
+          optionIcon={optionIcon}
           title={title}
           label={label}
           onClickFn={undefined}
@@ -76,7 +76,7 @@ const KeyCard = ({
             <p>Apagado</p>
             <h2 className="tiny">Fecha de inscripcion</h2>
             <p>12 / Agosto / 2024</p>
-            <Option icon={<Edit size={15} />} label={"Editar"} />
+            <Option icon={<Edit size={15} />} label={"Editar"} onClickFn={onEditFn} />
         </div>
       </div>
     </div>

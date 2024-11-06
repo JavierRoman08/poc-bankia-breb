@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, TextProps } from "@aws-amplify/ui-react";
-import { SendProps } from "./Send";
+import { TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -18,16 +17,12 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type SeccionOverridesProps = {
-    Seccion?: PrimitiveOverrideProps<FlexProps>;
-    "Frame 31304"?: PrimitiveOverrideProps<FlexProps>;
-    send?: SendProps;
-    "Enviar dinero"?: PrimitiveOverrideProps<TextProps>;
+export declare type FlujosOverridesProps = {
+    Flujos?: PrimitiveOverrideProps<ViewProps>;
+    "Rectangle 3338"?: PrimitiveOverrideProps<ViewProps>;
+    "Home Bre-B sin llaves registradas"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type SeccionProps = React.PropsWithChildren<Partial<FlexProps> & {
-    label?: String;
-    frame31304?: React.ReactNode;
-} & {
-    overrides?: SeccionOverridesProps | undefined | null;
+export declare type FlujosProps = React.PropsWithChildren<Partial<ViewProps> & {
+    overrides?: FlujosOverridesProps | undefined | null;
 }>;
-export default function Seccion(props: SeccionProps): React.ReactElement;
+export default function Flujos(props: FlujosProps): React.ReactElement;

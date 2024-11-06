@@ -22,7 +22,7 @@ import KeysSelectAccount from './components/pages/home/bre-b/keys/select-account
 import ConfirmKey from '@/components/pages/home/bre-b/keys/confirm';
 import ReturnConfirmRequest from '@components/pages/home/bre-b/history/request';
 import KeyCreationComplete from './components/pages/home/bre-b/keys/key.creation';
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Suspense } from 'react';
 
 function App() {

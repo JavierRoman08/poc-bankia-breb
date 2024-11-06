@@ -32,9 +32,13 @@ export default function Header(props) {
       overrides: {
         Barra: {},
         "LOGO-B": {},
-        "Pagos inmediatos": {},
-        "Frame 31348": {},
-        "Frame 31349": { height: "115px", padding: "32px 111px 68px 111px" },
+        "Pagos inmediatos": { textAlign: "center", width: "252px" },
+        "Frame 31348": { width: "189px" },
+        "Frame 31349": {
+          height: "115px",
+          alignItems: "center",
+          padding: "32px 111px 68px 111px",
+        },
         "arrow-left": {},
         "Frame 31350": { height: "115px" },
         Header: {},

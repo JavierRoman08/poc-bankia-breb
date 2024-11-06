@@ -124,7 +124,7 @@ function History() {
             Solicitar devolucion
           </Button>
           <Spacer height={10}/>
-          <Button onClick={handelModal}>Cancelar</Button>
+          <Button className={`btn-outline`} onClick={handelModal}>Cancelar</Button>
         </div>
         <Spacer height={20}/>
       </CustomModal>

@@ -7,9 +7,10 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
+import Transfer from "./Transfer";
 import { Flex, Text } from "@aws-amplify/ui-react";
-export default function Seccion(props) {
-  const { label, frame31304, overrides, ...rest } = props;
+export default function Transacciones(props) {
+  const { overrides, ...rest } = props;
   return (
     <Flex
       gap="10px"
@@ -20,7 +21,7 @@ export default function Seccion(props) {
       alignItems="center"
       position="relative"
       padding="0px 0px 0px 0px"
-      {...getOverrideProps(overrides, "Seccion")}
+      {...getOverrideProps(overrides, "Transacciones")}
       {...rest}
     >
       <Flex
@@ -34,16 +35,29 @@ export default function Seccion(props) {
         position="relative"
         borderRadius="50px"
         padding="10px 10px 10px 10px"
-        backgroundColor="rgba(212,212,255,1)"
-        children={frame31304}
+        backgroundColor="rgba(102,220,255,1)"
         {...getOverrideProps(overrides, "Frame 31304")}
-      ></Flex>
+      >
+        <Transfer
+          width="42px"
+          height="42px"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          overflow="hidden"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          {...getOverrideProps(overrides, "Transfer")}
+        ></Transfer>
+      </Flex>
       <Text
         fontFamily="Inter"
-        fontSize="16px"
+        fontSize="14px"
         fontWeight="400"
         color="rgba(0,0,0,1)"
-        lineHeight="24px"
+        lineHeight="21px"
         textAlign="center"
         display="block"
         direction="column"
@@ -57,8 +71,8 @@ export default function Seccion(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Enviar dinero"
-        {...getOverrideProps(overrides, "Enviar dinero")}
+        children="Transferir&#xA;"
+        {...getOverrideProps(overrides, "Transferir")}
       ></Text>
     </Flex>
   );

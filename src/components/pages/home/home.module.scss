@@ -11,6 +11,10 @@
     grid-template-rows: repeat(2, 1fr);
     gap: 15px;
 
+    &__icon {
+        padding: 5px !important;
+    }
+
     &__item, &__breb {
         width: 100% !important;
         height: 100% !important;

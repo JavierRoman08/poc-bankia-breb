@@ -90,19 +90,6 @@
   top: 0;
 }
 
-// button
-
-.btn-enabled {
-  background-color: #00BD81 !important;
-  color: $color-white !important;
-}
-
-.btn-disabled {
-  background-color: #EFF0F0 !important;
-  color: #89949F !important;
-  pointer-events: none !important;
-}
-
 // amplify
 
 .amplify-input {
@@ -122,6 +109,20 @@
   box-shadow: none !important;
 }
 
-// .amplify-text {
-//   color: white !important;
-// }
+// button
+
+.btn-enabled {
+  background-color: #00BD81 !important;
+  color: $color-white !important;
+}
+
+.btn-outline {
+  color: #0D1A26;
+  border: 1px solid #89949F !important;
+}
+
+.btn-disabled {
+  background-color: #EFF0F0 !important;
+  color: #89949F !important;
+  pointer-events: none !important;
+}

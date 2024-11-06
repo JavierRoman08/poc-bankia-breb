@@ -1,5 +1,4 @@
 import styles from './key.type.module.scss';
-import Option from '@/components/atoms/option/option';
 
 interface KeyTypeProps {
     icon: any;

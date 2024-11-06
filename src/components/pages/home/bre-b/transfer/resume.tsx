@@ -73,7 +73,7 @@ function Resume() {
               <Button className={`btn-enabled`} onClick={confirmTransfer}>
                 Confirmar datos
               </Button>
-              <Button onClick={handleCancelModal}>Cancelar</Button>
+              <Button className={`btn-outline`} onClick={handleCancelModal}>Cancelar</Button>
             </div>
             <Spacer/>
           </div>
@@ -91,7 +91,7 @@ function Resume() {
           <Button className={`btn-enabled`} onClick={goToHome}>
             Continuar
           </Button>
-          <Button onClick={handleCancelModal}>Cancelar</Button>
+          <Button className={`btn-outline`} onClick={handleCancelModal}>Cancelar</Button>
         </div>
       </CustomModal>
     </div>

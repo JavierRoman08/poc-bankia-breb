@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, TextProps } from "@aws-amplify/ui-react";
-import { SendProps } from "./Send";
+import { IconProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -18,16 +17,13 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type SeccionOverridesProps = {
-    Seccion?: PrimitiveOverrideProps<FlexProps>;
-    "Frame 31304"?: PrimitiveOverrideProps<FlexProps>;
-    send?: SendProps;
-    "Enviar dinero"?: PrimitiveOverrideProps<TextProps>;
+export declare type LogoBankIAOverridesProps = {
+    LogoBankIA?: PrimitiveOverrideProps<IconProps>;
 } & EscapeHatchProps;
-export declare type SeccionProps = React.PropsWithChildren<Partial<FlexProps> & {
-    label?: String;
-    frame31304?: React.ReactNode;
+export declare type LogoBankIAProps = React.PropsWithChildren<Partial<IconProps> & {
+    property1?: "Pragma";
+    property2?: "Positivo" | "Principal";
 } & {
-    overrides?: SeccionOverridesProps | undefined | null;
+    overrides?: LogoBankIAOverridesProps | undefined | null;
 }>;
-export default function Seccion(props: SeccionProps): React.ReactElement;
+export default function LogoBankIA(props: LogoBankIAProps): React.ReactElement;

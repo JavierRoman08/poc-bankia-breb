@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, TextProps } from "@aws-amplify/ui-react";
-import { SendProps } from "./Send";
+import { IconProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -18,16 +17,12 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type SeccionOverridesProps = {
-    Seccion?: PrimitiveOverrideProps<FlexProps>;
-    "Frame 31304"?: PrimitiveOverrideProps<FlexProps>;
-    send?: SendProps;
-    "Enviar dinero"?: PrimitiveOverrideProps<TextProps>;
+export declare type BankIAOverridesProps = {
+    BankIA?: PrimitiveOverrideProps<IconProps>;
 } & EscapeHatchProps;
-export declare type SeccionProps = React.PropsWithChildren<Partial<FlexProps> & {
-    label?: String;
-    frame31304?: React.ReactNode;
+export declare type BankIAProps = React.PropsWithChildren<Partial<IconProps> & {
+    property1?: "Positivo" | "Principal";
 } & {
-    overrides?: SeccionOverridesProps | undefined | null;
+    overrides?: BankIAOverridesProps | undefined | null;
 }>;
-export default function Seccion(props: SeccionProps): React.ReactElement;
+export default function BankIA(props: BankIAProps): React.ReactElement;

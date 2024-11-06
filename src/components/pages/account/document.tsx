@@ -56,7 +56,7 @@ function AccountDocument({ route }: any) {
             <Button className={`btn-enabled`} onClick={() => navigate("/home")}>
               Si, Continuar
             </Button>
-            <Button onClick={() => setIsModalActive(false)}>
+            <Button className={`btn-outline`} onClick={() => setIsModalActive(false)}>
               No, Cancelar
             </Button>
           </div>

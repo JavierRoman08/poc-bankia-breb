@@ -34,22 +34,22 @@ function HomePage() {
       </nav>
       <Spacer height={30} />
       <img src="/cards.svg" alt="card_img" className="align-center" />
-      <Spacer height={20} />
-      <h2 className="subtitle">Realiza transacciones</h2>
+      <Spacer />
+      <h2 className="subtitle">Transacciones</h2>
       <Spacer height={20} />
       <div className={styles.optionsContainer}>
         <Seccion
-          frame31304={<Send size={35} />}
+          frame31304={<Send size={40} className={styles.optionsContainer__icon}/>}
           label={"Enviar dinero"}
           className={styles.optionsContainer__item}
         />
         <Seccion
-          frame31304={<CreditCard size={35} />}
+          frame31304={<CreditCard size={40} className={styles.optionsContainer__icon}/>}
           label={"Pagar tarjetas"}
           className={styles.optionsContainer__item}
         />
         <Seccion
-          frame31304={<DollarSign size={35} />}
+          frame31304={<DollarSign size={40} className={styles.optionsContainer__icon}/>}
           label={"Pagar creditos"}
           className={styles.optionsContainer__item}
         />
@@ -66,13 +66,13 @@ function HomePage() {
         </button>
 
         <Seccion
-          frame31304={<FileText size={35} />}
+          frame31304={<FileText size={40} className={styles.optionsContainer__icon}/>}
           label={"Consultar extractos"}
           className={styles.optionsContainer__item}
         />
         <Seccion
-          frame31304={<Calendar size={35} />}
-          label={"Proximos pagos"}
+          frame31304={<Calendar size={40} className={styles.optionsContainer__icon}/>}
+          label={"Próximos pagos"}
           className={styles.optionsContainer__item}
         />
       </div>

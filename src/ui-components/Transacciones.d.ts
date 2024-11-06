@@ -5,8 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
+import { TransferProps } from "./Transfer";
 import { FlexProps, TextProps } from "@aws-amplify/ui-react";
-import { SendProps } from "./Send";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -18,16 +18,13 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type SeccionOverridesProps = {
-    Seccion?: PrimitiveOverrideProps<FlexProps>;
+export declare type TransaccionesOverridesProps = {
+    Transacciones?: PrimitiveOverrideProps<FlexProps>;
     "Frame 31304"?: PrimitiveOverrideProps<FlexProps>;
-    send?: SendProps;
-    "Enviar dinero"?: PrimitiveOverrideProps<TextProps>;
+    Transfer?: TransferProps;
+    Transferir?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type SeccionProps = React.PropsWithChildren<Partial<FlexProps> & {
-    label?: String;
-    frame31304?: React.ReactNode;
-} & {
-    overrides?: SeccionOverridesProps | undefined | null;
+export declare type TransaccionesProps = React.PropsWithChildren<Partial<FlexProps> & {
+    overrides?: TransaccionesOverridesProps | undefined | null;
 }>;
-export default function Seccion(props: SeccionProps): React.ReactElement;
+export default function Transacciones(props: TransaccionesProps): React.ReactElement;
