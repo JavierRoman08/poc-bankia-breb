@@ -4,7 +4,7 @@ import Contact from "@/components/molecules/contact/contact";
 import { useNavigate } from "react-router-dom";
 import BreBLayout from "@/components/templates/breb.layout";
 
-function Transfer() {
+function Contacts() {
   const history = useNavigate();
 
   const selectAccount = () => {
@@ -12,8 +12,8 @@ function Transfer() {
   };
 
   return (
-    <BreBLayout>
-      <h2 className="subtitle">Contactos Pin</h2>
+    <BreBLayout title="Mis Contactos">
+      <p className="body">Lista de favoritos</p>
       <Spacer height={20} />
       <SearchField label="Search" placeholder="Buscar contacto" />
       <Spacer height={20} />
@@ -32,4 +32,4 @@ function Transfer() {
   );
 }
 
-export default Transfer;
+export default Contacts;

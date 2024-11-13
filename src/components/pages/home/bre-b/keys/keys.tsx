@@ -3,6 +3,7 @@ import KeyCard from "@/components/molecules/key-card/key.card";
 import KeyType from "@/components/molecules/key-type/key.type";
 import CustomModal from "@/components/molecules/modal/modal";
 import BreBLayout from "@/components/templates/breb.layout";
+import { Button } from "@aws-amplify/ui-react";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -16,11 +17,22 @@ import { BiBuilding, BiQr } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
 function Keys() {
+  const [isModalBlockActive, setIsModalBlockActive] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
+  const [keyActive, setKeyActive] = useState(true);
   const history = useNavigate();
 
-  const handleModal = () => {
+  const handleShareModal = () => {
     setIsModalActive(!isModalActive);
+  };
+
+  const handleBlockModal = () => {
+    setIsModalBlockActive(!isModalBlockActive);
+  };
+
+  const confirmKeyBlock = () => {
+    setKeyActive(!keyActive);
+    handleBlockModal();
   };
 
   // const goDocument = () => {
@@ -45,8 +57,10 @@ function Keys() {
 
   return (
     <>
-      <section className={`${isModalActive ? "blurred" : ""}`}>
-        <BreBLayout>
+      <section
+        className={`${isModalActive || isModalBlockActive ? "blurred" : ""}`}
+      >
+        <BreBLayout title="Mis llaves">
           <div className={`tiny`}>
             <p>
               Con tus llaves puede recibir pagos y tranferencias a través de
@@ -58,8 +72,9 @@ function Keys() {
                 icon={<CreditCard size={25} />}
                 title={"Documento de identidad"}
                 label={"Registrar llave"}
-                onShareFn={handleModal}
-                isActive={true}
+                onBlockFn={handleBlockModal}
+                onShareFn={handleShareModal}
+                isActive={keyActive}
               />
               <KeyType
                 icon={<Smartphone size={25} />}
@@ -91,12 +106,11 @@ function Keys() {
               />
             </div>
           </div>
-          <Spacer/>
+          <Spacer />
         </BreBLayout>
       </section>
-
-      <CustomModal isOpen={isModalActive} handleModal={handleModal}>
-        <h2>Compartir llave</h2>
+      <CustomModal isOpen={isModalActive} handleModal={handleShareModal}>
+        <h2 className="subtitle">Compartir llave</h2>
         <p>Selecciona el medio que deseas transferir o pagar</p>
         <Spacer height={20} />
         <KeyType
@@ -112,6 +126,29 @@ function Keys() {
           label={""}
           onClickFn={undefined}
         />
+      </CustomModal>
+      <CustomModal isOpen={isModalBlockActive} handleModal={handleBlockModal}>
+        <h2 className="subtitle">
+          {keyActive
+            ? "¿Quieres desactivar esta llave temporalmente?"
+            : "¿Quieres activar esta llave?"}
+        </h2>
+        <Spacer height={10} />
+        <p>
+          {keyActive
+            ? "Quedará inhabilitada para todas las transacciones y pagos que realices."
+            : "Quedará activa para todas las transacciones y pagos que realices."}
+        </p>
+        <Spacer height={20} />
+        <div>
+          <Button className={`btn-enabled`} onClick={confirmKeyBlock}>
+            {keyActive ? "Bloquear" : "Activar"}
+          </Button>
+          <Spacer height={10} />
+          <Button className={`btn-outline`} onClick={handleBlockModal}>
+            Cancelar
+          </Button>
+        </div>
       </CustomModal>
     </>
   );

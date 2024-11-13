@@ -10,6 +10,7 @@ interface KeyCardProps {
   icon: any;
   title: string;
   label: string;
+  onBlockFn: any;
   onShareFn?: any;
   onEditFn?: any;
   isActive?: boolean;
@@ -19,23 +20,19 @@ const KeyCard = ({
   icon,
   title,
   label,
+  onBlockFn,
   onShareFn,
   onEditFn,
   isActive,
 }: KeyCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isActiveKey, setIsActiveKey] = useState(isActive);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const handleActive = () => {
-    setIsActiveKey(!isActiveKey);
-  };
-
   return (
-    <div className={`${styles.card} ${!isActiveKey ? styles.disabled : ''}`}>
+    <div className={`${styles.card} ${!isActive ? styles.disabled : ''}`}>
       <div className="row align-center">
         <KeyType
           icon={icon}
@@ -46,22 +43,15 @@ const KeyCard = ({
         />
         <SwitchField
           fontSize={14}
-          label={isActiveKey ? "Bloquear" : "Activar"}
-          isChecked={isActiveKey}
-          onChange={handleActive}
+          label={isActive ? "Bloquear" : "Activar"}
+          isChecked={isActive}
+          onChange={onBlockFn}
           trackCheckedColor={"#00BD81"}
           className={styles.switch}
         />
       </div>
       <div className={styles.card__content}>
         <p>CC 1203912313</p>
-        <hr />
-        <div className={styles.dropdown}>
-          <div className="row">
-            <Option icon={<Share2 size={15} onClick={onShareFn} />} label={"Compartir"} />
-          </div>
-          {isExpanded ? <ChevronUp onClick={toggleExpand} /> : <ChevronDown onClick={toggleExpand} />}
-        </div>
         <div className={`${styles.content} ${isExpanded ? styles.expanded : ""}`}>
             <Spacer height={10}/>
             <h2 className="tiny">Cuenta asociada</h2>
@@ -76,6 +66,14 @@ const KeyCard = ({
             <p>12 / Agosto / 2024</p>
             <Option icon={<Edit size={15} />} label={"Editar"} onClickFn={onEditFn} />
         </div>
+        <hr />
+        <div className={styles.dropdown}>
+          <div className="row">
+            <Option icon={<Share2 size={15} onClick={onShareFn} />} label={"Compartir"} />
+          </div>
+          {isExpanded ? <ChevronUp onClick={toggleExpand} /> : <ChevronDown onClick={toggleExpand} />}
+        </div>
+        
       </div>
     </div>
   );

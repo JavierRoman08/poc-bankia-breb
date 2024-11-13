@@ -17,16 +17,26 @@ import {
 
 function History() {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [returnType, setReturnType] = useState("");
+  const [returnType, setReturnType] = useState("total");
+
+  const [fileName, setFileName] = useState("Adjuntar evidencia (opcional)");
+
   const history = useNavigate();
 
   const handelModal = () => {
     setIsModalVisible(!isModalVisible);
   };
 
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setFileName(file.name); // Almacena el nombre del archivo seleccionado
+    }
+  };
+
   const completeRequest = () => {
-    history('/home/bre-b/history/request')
-  }
+    history("/home/bre-b/history/request");
+  };
 
   return (
     <>
@@ -116,17 +126,30 @@ function History() {
           rows={3}
           className="body"
         />
+        <Spacer height={20} />
+        <div className={styles.fileInputContainer}>
+          <label className={`${styles.customFileButton} bold align-center`} htmlFor="fileInput">
+            {fileName}
+          </label>
+          {/* Input file oculto */}
+          <Input type="file" id="fileInput" className={styles.fileInput} onChange={handleFileChange} />
+        </div>
         <Spacer height={10} />
-        <span className="tiny">Recuerda que sólo puedes adjuntar archivos PDF, FPG, PNG con un máximo de 20 Mb</span>
+        <span className="tiny">
+          Recuerda que sólo puedes adjuntar archivos PDF, FPG, PNG con un máximo
+          de 20 Mb
+        </span>
         <Spacer height={20} />
         <div className={`col`}>
           <Button className={`btn-enabled`} onClick={completeRequest}>
             Solicitar devolucion
           </Button>
-          <Spacer height={10}/>
-          <Button className={`btn-outline`} onClick={handelModal}>Cancelar</Button>
+          <Spacer height={10} />
+          <Button className={`btn-outline`} onClick={handelModal}>
+            Cancelar
+          </Button>
         </div>
-        <Spacer height={20}/>
+        <Spacer height={20} />
       </CustomModal>
     </>
   );

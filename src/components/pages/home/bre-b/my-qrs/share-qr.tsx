@@ -9,7 +9,7 @@ import CustomModal from "@/components/molecules/modal/modal";
 
 function ShareQR() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [returnType, setReturnType] = useState("withoutValue");
+  const [codeType, setCodeType] = useState("withoutValue");
   const history = useNavigate();
 
   const handleCancelModal = () => {
@@ -49,15 +49,15 @@ function ShareQR() {
           <Spacer height={20} />
           <RadioGroupField
             legend=""
-            name="returnType"
-            value={returnType}
-            onChange={(e) => setReturnType(e.target.value)}
+            name="codeType"
+            value={codeType}
+            onChange={(e) => setCodeType(e.target.value)}
           >
             <Radio value="withValue">Con valor</Radio>
             <Radio value="withoutValue">Sin valor</Radio>
           </RadioGroupField>
           <Spacer height={20} />
-          {returnType == "withValue" ? (
+          {codeType == "withValue" ? (
             <Input
               variation="quiet"
               placeholder="Escribe el monto"

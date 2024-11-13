@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import LogoBWithText from "@/ui-components/LogoBWithText";
 import { Button } from "@aws-amplify/ui-react";
 import styles from './request.layout.module.scss';
 
@@ -17,7 +16,7 @@ const RequestLayout = ({title, message}: RequestLayoutProps) => {
 
   return (
     <section className={`${styles.container} col align-center`}>
-      <LogoBWithText />
+      <img src="/bre-b-icon.svg" alt="logo_bre_b" />
       <div className="col">
         <img src="/check.svg" alt="request_check" />
         <p className="title">{title}</p>

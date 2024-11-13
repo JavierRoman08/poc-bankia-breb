@@ -3,7 +3,7 @@ import Cover from '@components/pages/cover/cover'
 import Login from '@components/pages/login/login';
 import HomePage from '@components/pages/home/home';
 import BreB from '@components/pages/home/bre-b/bre-b';
-import Transfer from '@components/pages/home/bre-b/transfer';
+import Contacts from '@/components/pages/home/bre-b/contacts';
 import SelectAccount from '@components/pages/home/bre-b/select-account';
 import AccountDocument from '@/components/pages/account/document';
 import AccountPhone from '@/components/pages/account/phone';
@@ -26,6 +26,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Suspense } from 'react';
 import MyQRs from './components/pages/home/bre-b/my-qrs/my-qrs';
 import ShareQR from './components/pages/home/bre-b/my-qrs/share-qr';
+import GeneratedQR from './components/pages/home/bre-b/my-qrs/generated-qr';
+import ShareCompleted from './components/pages/home/bre-b/my-qrs/share-completed';
 
 function App() {
 
@@ -40,7 +42,7 @@ function App() {
           
             {/* Rutas de Transferencia */}
             
-            <Route path="/home/bre-b/transfer" element={<Transfer />} />
+            <Route path="/home/bre-b/transfer" element={<Contacts />} />
             <Route path="/home/bre-b/transfer/select-account" element={<SelectAccount />} />
             <Route path="/home/bre-b/transfer/select-account/document" element={<AccountDocument route={'/home/bre-b/transfer/amount'} />} />
             <Route path="/home/bre-b/transfer/select-account/phone" element={<AccountPhone route={'/home/bre-b/transfer/amount'} />} />
@@ -57,7 +59,8 @@ function App() {
             <Route path="/home/bre-b/scan-qr" element={<QrCode />} />
             <Route path="/home/bre-b/my-qrs" element={<MyQRs />} />
             <Route path="/home/bre-b/my-qrs/share-qr" element={<ShareQR />} />
-            <Route path="/home/bre-b/my-qrs/share-qr/code" element={<ShareQR />} />
+            <Route path="/home/bre-b/my-qrs/share-qr/code" element={<GeneratedQR />} />
+            <Route path="/home/bre-b/my-qrs/completed" element={<ShareCompleted />} />
 
             {/* Rutas de Movimientos */}
               

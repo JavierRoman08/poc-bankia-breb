@@ -25,7 +25,7 @@ const Movement = ({ date, amount, description, receiver, onClickFn }: MovementPr
                     <RefreshCcw  />
                 </button>
             </div>
-            <span className='tiny'>Solicitar devolucion</span>
+            <button className={`${styles.container__link}`}>Solicitar devolucion</button>
         </div>
       </div>
     );

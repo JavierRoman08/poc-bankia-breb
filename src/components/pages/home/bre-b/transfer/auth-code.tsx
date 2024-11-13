@@ -23,7 +23,7 @@ function AuthCode() {
   };
 
   return (
-    <BreBLayout>
+    <BreBLayout title="Autenticación">
       <div className={styles.container}>
         <img
           src="/img-clave-personalizada.svg"

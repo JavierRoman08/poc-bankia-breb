@@ -10,27 +10,27 @@ function SelectAccount() {
   const history = useNavigate();
 
   const goDocument = () => {
-    history("/home/bre-b/transfer/select-account/document");
+    history("document");
   };
 
   const goCode = () => {
-    history("/home/bre-b/transfer/select-account/code");
+    history("code");
   };
 
   const goPhone = () => {
-    history("/home/bre-b/transfer/select-account/phone");
+    history("phone");
   };
 
   const goEmail = () => {
-    history("/home/bre-b/transfer/select-account/email");
+    history("email");
   };
 
   const goKey = () => {
-    history("/home/bre-b/transfer/select-account/key");
+    history("key");
   };
 
   return (
-    <BreBLayout>
+    <BreBLayout title="Nuevo contacto">
       <h2 className="subtitle align-center">Selecciona el tipo de cuenta</h2>
       <Spacer />
       <div className={`${styles.accountOptionsContainer} gap`}>

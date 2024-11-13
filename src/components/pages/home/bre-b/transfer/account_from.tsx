@@ -13,7 +13,7 @@ function AccountFrom() {
     }
 
   return (
-    <BreBLayout>
+    <BreBLayout title="Seleccionar cuenta">
       <div className={styles.container}>
         <p>¿Desde dónde vas a transferir?</p>
         <Spacer />

@@ -13,3 +13,11 @@
     align-items: flex-end;
     padding-bottom: 40px;
 }
+
+.qrCode {
+    width: 50% !important;
+    max-width: 250px !important;
+    height: auto;
+    display: flex;
+    margin: 30px auto;
+}

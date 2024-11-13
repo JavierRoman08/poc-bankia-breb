@@ -26,7 +26,7 @@ function Resume() {
   return (
     <div>
       <section className={`${isCancelModalOpen ? "blurred" : ""}`}>
-        <BreBLayout>
+        <BreBLayout title="Validación de datos">
           <div className={styles.container}>
             <p>Valida los datos de la transferencia</p>
             <Spacer height={20} />
