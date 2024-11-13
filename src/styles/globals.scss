@@ -43,6 +43,10 @@
   margin: auto;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .color-principal {
   color: $color-principal;
 }
@@ -107,6 +111,11 @@
 
 .amplify-switch__track--focused {
   box-shadow: none !important;
+}
+
+.amplify-field__show-password {
+  border: 1px solid #89949F !important;
+  border-left: none !important;
 }
 
 // button

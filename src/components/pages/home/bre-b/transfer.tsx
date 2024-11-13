@@ -25,7 +25,7 @@ function Transfer() {
       <Spacer />
       <div className="align-center">
         <Button backgroundColor={'#00BD81'} color={'white'} onClick={selectAccount}>
-          Llave nueva
+          Nuevo contacto
         </Button>
       </div>
     </BreBLayout>

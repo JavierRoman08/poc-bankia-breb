@@ -24,6 +24,8 @@ import ReturnConfirmRequest from '@components/pages/home/bre-b/history/request';
 import KeyCreationComplete from './components/pages/home/bre-b/keys/key.creation';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Suspense } from 'react';
+import MyQRs from './components/pages/home/bre-b/my-qrs/my-qrs';
+import ShareQR from './components/pages/home/bre-b/my-qrs/share-qr';
 
 function App() {
 
@@ -51,7 +53,11 @@ function App() {
             <Route path="/home/bre-b/transfer/verification" element={<AuthCode />} />
             <Route path="/home/bre-b/transfer/completed" element={<TransferCompleted />} />
           
+            {/* Rutas de QR */}
             <Route path="/home/bre-b/scan-qr" element={<QrCode />} />
+            <Route path="/home/bre-b/my-qrs" element={<MyQRs />} />
+            <Route path="/home/bre-b/my-qrs/share-qr" element={<ShareQR />} />
+            <Route path="/home/bre-b/my-qrs/share-qr/code" element={<ShareQR />} />
 
             {/* Rutas de Movimientos */}
               

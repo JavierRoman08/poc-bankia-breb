@@ -19,19 +19,23 @@ function BreB() {
   };
 
   const startTransfer = () => {
-    history("/home/bre-b/transfer");
+    history("transfer");
   };
 
   const goToHistory = () => {
-    history("/home/bre-b/history");
+    history("history");
   };
 
   const scanQrCode = () => {
-    history("/home/bre-b/scan-qr");
+    history("scan-qr");
   };
 
+  const goToMyQRs = () => {
+    history("my-qrs")
+  }
+
   const goMyKeys = () => {
-    history("/home/bre-b/my-keys");
+    history("my-keys");
   };
 
   return (
@@ -52,7 +56,8 @@ function BreB() {
             />
             <Seccion
               frame31304={<MdQrCodeScanner size={35} />}
-              label={"Mis Código QR"}
+              label={"Mis Códigos QR"}
+              onClick={goToMyQRs}
               className={styles.optionsContainer__item}
             />
             <Seccion

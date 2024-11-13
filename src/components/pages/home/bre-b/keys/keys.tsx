@@ -56,7 +56,6 @@ function Keys() {
             <div className="col gap">
               <KeyCard
                 icon={<CreditCard size={25} />}
-                optionIcon={<ArrowRight size={20} />}
                 title={"Documento de identidad"}
                 label={"Registrar llave"}
                 onShareFn={handleModal}
@@ -92,6 +91,7 @@ function Keys() {
               />
             </div>
           </div>
+          <Spacer/>
         </BreBLayout>
       </section>
 

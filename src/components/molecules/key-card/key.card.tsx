@@ -8,7 +8,6 @@ import Option from "@/components/atoms/option/option";
 
 interface KeyCardProps {
   icon: any;
-  optionIcon?: any;
   title: string;
   label: string;
   onShareFn?: any;
@@ -18,7 +17,6 @@ interface KeyCardProps {
 
 const KeyCard = ({
   icon,
-  optionIcon,
   title,
   label,
   onShareFn,
@@ -41,7 +39,7 @@ const KeyCard = ({
       <div className="row align-center">
         <KeyType
           icon={icon}
-          optionIcon={optionIcon}
+          optionIcon={undefined}
           title={title}
           label={label}
           onClickFn={undefined}

@@ -57,7 +57,7 @@ export default function Seccion(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Enviar dinero"
+        children={label}
         {...getOverrideProps(overrides, "Enviar dinero")}
       ></Text>
     </Flex>

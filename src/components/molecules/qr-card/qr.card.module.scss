@@ -1,0 +1,32 @@
+.card {
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    background-color: #E6EEFE;
+    margin-bottom: 10px;
+
+    &__content {
+      padding: 0px 16px 16px 16px;
+
+      div {
+        align-items: center !important;
+        justify-content: space-between;
+      }
+
+      button {
+        gap: 10px;
+        justify-self: flex-end;
+      }
+    }
+}
+
+.qrCode {
+  width: 100px;
+  height: 100px;
+}
+
+.disabled {
+  div, button {
+    background-color: #EFF0F0;
+  }
+}
