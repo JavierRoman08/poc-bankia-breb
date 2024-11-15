@@ -30,4 +30,9 @@
     &__link {
         border-bottom: 1px solid;
     }
+
+    &__icon {
+        padding: 5px;
+        background-color: $color-icon;
+    }
 }

@@ -1,16 +1,20 @@
 import Spacer from "@/components/atoms/spacer/spacer";
-import styles from "./transfer.module.scss";
+import styles from "@components/pages/home/bre-b/transfer/transfer.module.scss";
 import BreBLayout from "@/components/templates/breb.layout";
 import { Button } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function AuthCode() {
+interface AuthCodeProps {
+  nextRoute: string;
+}
+
+const AuthCode = ({nextRoute}: AuthCodeProps) =>  {
   const [code, setCode] = useState(new Array(6).fill(""));
   const history = useNavigate();
 
-  const completeTransfer = () => {
-    history("/home/bre-b/transfer/completed");
+  const sendCode = () => {
+    history(nextRoute);
   };
 
   const handleInputChange = (index: number, newValue: string) => {
@@ -55,7 +59,7 @@ function AuthCode() {
           Reenviar código
         </div>
         <div className={`${styles.btn} ${styles.container__content} align-center`}>
-          <Button className={code.every((value) => value !== '') ? `btn-enabled` : `btn-disabled`} onClick={completeTransfer}>
+          <Button className={code.every((value) => value !== '') ? `btn-enabled` : `btn-disabled`} onClick={sendCode}>
             Confirmar
           </Button>
         </div>

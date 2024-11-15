@@ -9,13 +9,12 @@ interface ModalProps {
 }
 
 const CustomModal = ({ isOpen, handleModal, children }: ModalProps) => {
-  if (!isOpen) return null;
-
   return (
-    <div className={styles.modal}>
+    <div className={`${styles.modal} ${isOpen ? styles.isOpen : styles.isClosed}`}>
       <div className={styles.modal__close}>
         <MdClose onClick={handleModal} size={25} />
       </div>
+      <Spacer height={10} />
       {children}
       <Spacer height={20} />
     </div>

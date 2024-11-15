@@ -13,6 +13,20 @@
     height: auto;
     margin: auto !important;
     padding: 20px;
+    transform: translateY(100%); // Empieza oculto desde abajo
+    opacity: 0;
+    transition: transform 0.5s ease;
+
+    // Cuando el modal está abierto
+    &.isOpen {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    &.isClosed {
+        transform: translateY(100%);
+        opacity: 1;
+    }
 
     &__close {
         display: flex;

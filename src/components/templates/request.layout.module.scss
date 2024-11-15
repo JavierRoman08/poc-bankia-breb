@@ -5,15 +5,16 @@
     width: 100%;
     height: 100%;
     padding: 30px 20px;
-    max-width: 596px;
+    max-width: $breakpoint-sm;
     min-height: 100vh;
     background-color: #32005E;
 
     div {
         flex: 1;
-        max-width: 250px;
-        gap: 20px;
-        justify-content: center;
+        gap: 40px;
+        max-width: 300px;
         color: $color-white;
+        justify-content: center;
     }
+
 }

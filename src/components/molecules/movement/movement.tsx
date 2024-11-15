@@ -1,4 +1,4 @@
-import { RefreshCcw } from 'react-feather';
+import { Repeat } from 'react-feather';
 import styles from './movement.module.scss';
 
 interface MovementProps {
@@ -10,7 +10,6 @@ interface MovementProps {
 }
 
 const Movement = ({ date, amount, description, receiver, onClickFn }: MovementProps) => {
-  
     return (
       <div className={`${styles.container} row align-center`}>
         <div className={`${styles.container__data}`}>
@@ -21,11 +20,11 @@ const Movement = ({ date, amount, description, receiver, onClickFn }: MovementPr
         <div className={`${styles.container__options}`}>
             <div className='row align-center gap'>
                 <p>${amount}</p>
-                <button onClick={onClickFn}>
-                    <RefreshCcw  />
+                <button className={`${styles.container__icon} circle row`}>
+                    <Repeat size={16} />
                 </button>
             </div>
-            <button className={`${styles.container__link}`}>Solicitar devolucion</button>
+            <button onClick={onClickFn} className={`${styles.container__link}`}>Solicitar reversión</button>
         </div>
       </div>
     );

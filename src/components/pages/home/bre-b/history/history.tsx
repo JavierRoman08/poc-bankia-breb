@@ -90,7 +90,7 @@ function History() {
         </BreBLayout>
       </section>
       <CustomModal isOpen={isModalVisible} handleModal={handelModal}>
-        <h2 className="subtitle">Solicitar devolucion</h2>
+        <h2 className="subtitle">Solicitar reversión</h2>
         <p>
           Para solicitar una devolución al comericio ingresa la siguiente
           información

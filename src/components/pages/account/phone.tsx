@@ -55,7 +55,7 @@ function AccountPhone({ route }: any) {
           <p>¿Deseas solicitar la portabilidad?</p>
           <Spacer height={10} />
           <div className={`${styles.buttons} col gap`}>
-            <Button className={`btn-enabled`} onClick={() => navigate("/home")}>
+            <Button className={`btn-enabled`} onClick={() => navigate("/home/bre-b/my-keys/portability")}>
               Si, Continuar
             </Button>
             <Button className={`btn-outline`} onClick={() => setIsModalActive(false)}>

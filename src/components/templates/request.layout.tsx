@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@aws-amplify/ui-react";
 import styles from './request.layout.module.scss';
+import Spacer from "../atoms/spacer/spacer";
 
 interface RequestLayoutProps {
     title?: string;

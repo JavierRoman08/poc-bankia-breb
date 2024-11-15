@@ -13,7 +13,7 @@ import AccountMail from '@/components/pages/account/mail';
 import Amount from '@components/pages/home/bre-b/transfer/amount';
 import AccountFrom from '@components/pages/home/bre-b/transfer/account_from';
 import Resume from '@components/pages/home/bre-b/transfer/resume';
-import AuthCode from '@components/pages/home/bre-b/transfer/auth-code';
+import AuthCode from '@/components/pages/auth/auth-code';
 import TransferCompleted from '@components/pages/home/bre-b/transfer/transfer-complete';
 import QrCode from '@components/pages/home/bre-b/qr/qr-code';
 import History from '@components/pages/home/bre-b/history/history';
@@ -28,6 +28,8 @@ import MyQRs from './components/pages/home/bre-b/my-qrs/my-qrs';
 import ShareQR from './components/pages/home/bre-b/my-qrs/share-qr';
 import GeneratedQR from './components/pages/home/bre-b/my-qrs/generated-qr';
 import ShareCompleted from './components/pages/home/bre-b/my-qrs/share-completed';
+import Portability from './components/pages/home/bre-b/keys/portability';
+import PortabilityRequest from './components/pages/home/bre-b/keys/portability-request';
 
 function App() {
 
@@ -52,7 +54,7 @@ function App() {
             <Route path="/home/bre-b/transfer/amount" element={<Amount />} />
             <Route path="/home/bre-b/transfer/from" element={<AccountFrom />} />
             <Route path="/home/bre-b/transfer/resume" element={<Resume />} />
-            <Route path="/home/bre-b/transfer/verification" element={<AuthCode />} />
+            <Route path="/home/bre-b/transfer/verification" element={<AuthCode nextRoute='/home/bre-b/transfer/completed' />} />
             <Route path="/home/bre-b/transfer/completed" element={<TransferCompleted />} />
           
             {/* Rutas de QR */}
@@ -78,6 +80,14 @@ function App() {
             <Route path="/home/bre-b/my-keys/select-account" element={<KeysSelectAccount />} />
             <Route path="/home/bre-b/my-keys/select-account/confirm" element={<ConfirmKey />} />
             <Route path="/home/bre-b/my-keys/select-account/confirm/finish" element={<KeyCreationComplete />} />
+
+            {/* Ruta de portabilidad */}
+
+            <Route path="/home/bre-b/my-keys/portability" element={<KeysSelectAccount />} />
+            <Route path="/home/bre-b/my-keys/portability/confirm" element={<Portability />} />
+            <Route path="/home/bre-b/my-keys/portability/security-code" element={<AuthCode nextRoute='/home/bre-b/my-keys/portability/request'/>} />
+            <Route path="/home/bre-b/my-keys/portability/request" element={<PortabilityRequest />} />
+
         </Routes>
       </Suspense>
     </BrowserRouter>

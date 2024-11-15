@@ -8,14 +8,23 @@ interface DataResumeProps {
   title: string;
   description: string;
   value: string;
-  onClickFn: any;
+  onClickFn?: any;
 }
 
-const DataResume = ({ icon, imageUrl, title, description, value, onClickFn}: DataResumeProps) => {
+const DataResume = ({
+  icon,
+  imageUrl,
+  title,
+  description,
+  value,
+  onClickFn,
+}: DataResumeProps) => {
   return (
     <div className={styles.container}>
       <div className="row gap">
-        {imageUrl ? <img src={imageUrl} alt="image_logo_product" /> : (
+        {imageUrl ? (
+          <img src={imageUrl} alt="image_logo_product" />
+        ) : (
           <div className={`${styles.icon} row circle`}>{icon}</div>
         )}
         <h3>{title}</h3>
@@ -24,10 +33,13 @@ const DataResume = ({ icon, imageUrl, title, description, value, onClickFn}: Dat
       <p>{description}</p>
       <div className={`${styles.change} row`}>
         <p className="bold">{value}</p>
-        <button className={`link row bold`} onClick={onClickFn}>
-          <p>Cambiar</p>
-          <ChevronRight />
-        </button>
+
+        {onClickFn ? (
+          <button className={`link row bold`} onClick={onClickFn}>
+            <p>Cambiar</p>
+            <ChevronRight />
+          </button>
+        ) : null}
       </div>
     </div>
   );

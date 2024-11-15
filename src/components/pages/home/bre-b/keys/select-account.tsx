@@ -13,7 +13,7 @@ function KeysSelectAccount() {
   }
 
   return (
-    <BreBLayout title="Creación de llave">
+    <BreBLayout title="Seleccionar cuenta">
       <div className={`tiny`}>
         <h2 className="body">¿Qué cuenta vas a asociar a la llave?</h2>
         <Spacer height={10} />
