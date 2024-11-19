@@ -30,6 +30,7 @@ function AccountMail({ route }: any) {
       accountType={"Correo electrónico"}
       onClickFn={handleClick}
       title={`Agregar nueva cuenta`}
+      value={email}
     >
       <p>Correo electrónico</p>
       <Input

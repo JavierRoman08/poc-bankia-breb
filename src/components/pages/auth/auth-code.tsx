@@ -18,7 +18,6 @@ const AuthCode = ({nextRoute}: AuthCodeProps) =>  {
   };
 
   const handleInputChange = (index: number, newValue: string) => {
-    
     if (newValue.length <= 1 && /^\d*$/.test(newValue)) {
       const updatedInputs = [...code];
       updatedInputs[index] = newValue;      
@@ -55,15 +54,14 @@ const AuthCode = ({nextRoute}: AuthCodeProps) =>  {
         <Spacer />
         <p className="align-center">¿No has obtenido el código OTP?</p>
         <Spacer />
-        <div className={`${styles.link} align-center bold`}>
+        <button className={`${styles.link} align-center bold`}>
           Reenviar código
-        </div>
-        <div className={`${styles.btn} ${styles.container__content} align-center`}>
+        </button>
+        <div className={`${styles.btn} align-center flex`}>
           <Button className={code.every((value) => value !== '') ? `btn-enabled` : `btn-disabled`} onClick={sendCode}>
             Confirmar
           </Button>
         </div>
-        <Spacer />
       </div>
     </BreBLayout>
   );

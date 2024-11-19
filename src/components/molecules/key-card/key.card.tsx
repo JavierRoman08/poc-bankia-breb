@@ -69,11 +69,10 @@ const KeyCard = ({
         <hr />
         <div className={styles.dropdown}>
           <div className="row">
-            <Option icon={<Share2 size={15} onClick={onShareFn} />} label={"Compartir"} />
+            <Option icon={<Share2 size={15} />} label={"Compartir"} onClickFn={onShareFn} />
           </div>
           {isExpanded ? <ChevronUp onClick={toggleExpand} /> : <ChevronDown onClick={toggleExpand} />}
         </div>
-        
       </div>
     </div>
   );

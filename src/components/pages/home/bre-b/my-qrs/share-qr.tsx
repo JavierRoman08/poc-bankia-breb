@@ -4,7 +4,6 @@ import { Button, Input, Radio, RadioGroupField } from "@aws-amplify/ui-react";
 import { useState } from "react";
 import { ChevronRight } from "react-feather";
 import { useNavigate } from "react-router-dom";
-import styles from "./my-qrs.module.scss";
 import CustomModal from "@/components/molecules/modal/modal";
 
 function ShareQR() {
@@ -19,6 +18,10 @@ function ShareQR() {
   const generateQr = () => {
     history('code')
   }
+  
+  const changeQrCode = () => {
+    history(-1)
+  }
 
   const goToHome = () => {
     history("/home");
@@ -28,6 +31,7 @@ function ShareQR() {
     <div>
       <section className={`${isModalOpen ? "blurred" : ""}`}>
         <BreBLayout title="Compartir código QR">
+          <div className="flex">
           <h2 className="body">Compartir código QR</h2>
           <p>Valida los datos ingresados</p>
           <Spacer />
@@ -38,10 +42,10 @@ function ShareQR() {
             <p>CC 1234567890</p>
             <div className={`row justify-between`}>
               <p className="bold">Ahorros 123-456-78-90</p>
-              <div className={`link row`}>
+              <button className={`link bold row`} onClick={changeQrCode}>
                 <p>Cambiar</p>
                 <ChevronRight />
-              </div>
+              </button>
             </div>
             <p className="bold">BankIA</p>
             <hr />
@@ -64,7 +68,7 @@ function ShareQR() {
               type="number"
             />
           ) : null}
-          <Spacer />
+          </div>
           <div>
             <Button className={`btn-enabled`} onClick={generateQr}>
               Generar QR

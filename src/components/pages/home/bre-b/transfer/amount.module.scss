@@ -4,10 +4,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-
-    &__content {
-        flex: 1;
-    }
 }
 
 .inputValue {
@@ -19,4 +15,15 @@
     width: 100%;
     align-items: flex-end;
     padding-bottom: 30px;
+}
+
+.alertMessage {
+    color: #002266;
+    padding: 12px 15px;
+    background-color: $color-card;
+}
+
+.errorMessage {
+    text-align: center;
+    color: #660000;
 }

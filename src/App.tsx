@@ -30,6 +30,11 @@ import GeneratedQR from './components/pages/home/bre-b/my-qrs/generated-qr';
 import ShareCompleted from './components/pages/home/bre-b/my-qrs/share-completed';
 import Portability from './components/pages/home/bre-b/keys/portability';
 import PortabilityRequest from './components/pages/home/bre-b/keys/portability-request';
+import OnBoarding from './components/pages/onboarding/onboarding';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 function App() {
 
@@ -40,10 +45,15 @@ function App() {
           <Route path="/" element={<Cover />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/home/bre-b" element={<BreB />} />
+
+            {/* Ruta de OnBoarding */}
+          
+            <Route path="/home/onboarding" element={<OnBoarding />} />
+
           
             {/* Rutas de Transferencia */}
             
+            <Route path="/home/bre-b" element={<BreB />} />
             <Route path="/home/bre-b/transfer" element={<Contacts />} />
             <Route path="/home/bre-b/transfer/select-account" element={<SelectAccount />} />
             <Route path="/home/bre-b/transfer/select-account/document" element={<AccountDocument route={'/home/bre-b/transfer/amount'} />} />

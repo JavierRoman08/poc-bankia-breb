@@ -19,6 +19,18 @@ function Resume() {
     history("/home");
   };
 
+  const changeProduct = () => {
+    history(-1)
+  }
+
+  const changeAmount = () => {
+    history(-2)
+  }
+
+  const changeKey = () => {
+    history('/home/bre-b/transfer/select-account')
+  }
+
   const handleCancelModal = () => {
     setIsCancelModalOpen(!isCancelModalOpen);
   };
@@ -27,10 +39,10 @@ function Resume() {
     <div>
       <section className={`${isCancelModalOpen ? "blurred" : ""}`}>
         <BreBLayout title="Validación de datos">
-          <div className={styles.container}>
+          <div className={`${styles.container}`}>
             <p>Valida los datos de la transferencia</p>
             <Spacer height={20} />
-            <div className={styles.container__content}>
+            <div className={`flex`}>
               <h2 className="body">Origen</h2>
               <Spacer height={20} />
               <div>
@@ -38,20 +50,20 @@ function Resume() {
                 <p className="bold">Ahorros 123-456-78-90</p>
                 <div className={styles.change}>
                   <p className="bold">BankIA</p>
-                  <div className={`${styles.link} row`}>
+                  <button className={`${styles.link} bold row`} onClick={changeProduct}>
                     <p>Cambiar</p>
                     <ChevronRight />
-                  </div>
+                  </button>
                 </div>
               </div>
               <hr />
               <p>Valor a transferir</p>
               <div className={styles.change}>
                 <p className="bold">$100.000</p>
-                <div className={`${styles.link} row`}>
+                <button className={`${styles.link} bold row`} onClick={changeAmount}>
                   <p>Cambiar</p>
                   <ChevronRight />
-                </div>
+                </button>
               </div>
               <Spacer />
               <h2 className="body">Llave destino</h2>
@@ -62,20 +74,18 @@ function Resume() {
               <hr />
               <div className={styles.change}>
                 <p className="bold">********594</p>
-                <div className={`${styles.link} row`}>
+                <button className={`${styles.link} bold row`} onClick={changeKey}>
                   <p>Cambiar</p>
                   <ChevronRight />
-                </div>
+                </button>
               </div>
             </div>
-            <Spacer />
             <div className={`${styles.btn} ${styles.container__content} align-center`}>
               <Button className={`btn-enabled`} onClick={confirmTransfer}>
                 Confirmar datos
               </Button>
               <Button className={`btn-outline`} onClick={handleCancelModal}>Cancelar</Button>
             </div>
-            <Spacer/>
           </div>
         </BreBLayout>
       </section>

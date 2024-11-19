@@ -29,6 +29,7 @@ function AccountDocument({ route }: any) {
           accountType={"Documento de identidad"}
           onClickFn={handleClick}
           title={`Agregar nueva cuenta`}
+          value={document}
         >
           <p>Número de documento</p>
           <Input

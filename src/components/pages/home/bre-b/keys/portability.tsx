@@ -51,7 +51,6 @@ function Portability() {
         <Button className={`btn-enabled`} onClick={verifyPortability}>
             Continuar
         </Button>
-        <Spacer />
       </main>
     </BreBLayout>
   );

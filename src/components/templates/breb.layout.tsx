@@ -1,3 +1,4 @@
+import Spacer from "../atoms/spacer/spacer";
 import BreBNavbar from "../molecules/bre-b-navbar/bre-b.navbar";
 import styles from './breb.layout.module.scss';
 
@@ -10,9 +11,10 @@ const BreBLayout = ({title, children}: BreBLayoutProps) => {
   return (
     <main className={styles.container}>
       <BreBNavbar title={title}/>
-      <section className="container" style={{flex: 1 }}>
+      <section className="container flex">
         {children}
       </section>
+      <Spacer />
     </main>
   );
 }

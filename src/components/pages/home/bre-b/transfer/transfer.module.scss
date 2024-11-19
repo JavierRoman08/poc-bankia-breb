@@ -5,14 +5,10 @@ hr {
 }
 
 .container {
-    height: 100%; 
     flex: 1;
+    height: 100%; 
     display: flex;
     flex-direction: column;
-
-    &__content {
-        flex: 1;
-    }
 }
 
 .btn {
@@ -64,7 +60,20 @@ hr {
     }
 }
 
+.transferContainer {
+    width: 100%;
+    min-height: 100vh;
+    max-width: $breakpoint-sm;
+    margin: auto;
+
+    &__resume {
+        flex: 1;
+    }
+}
+
 .transferCompleted {
+    width: 100%;
+    padding: 30px;
     background-color: #B2FFD3;
     border-radius: 0px 0px 16px 16px;
 

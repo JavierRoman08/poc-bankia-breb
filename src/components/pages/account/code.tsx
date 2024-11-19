@@ -29,6 +29,7 @@ function AccountCode({ route }: any) {
           accountType={"Código de establecimiento"}
           onClickFn={handleClick}
           title={`Agregar nueva cuenta`}
+          value={code}
         >
           <p>Código de establecimiento</p>
           <Input

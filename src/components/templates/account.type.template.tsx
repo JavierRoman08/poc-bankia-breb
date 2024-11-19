@@ -2,10 +2,11 @@ import { Button } from "@aws-amplify/ui-react";
 import Spacer from "../atoms/spacer/spacer";
 import BreBLayout from "./breb.layout";
 
-function AccountTypeTemplate({ imgURL, accountType, title, onClickFn, children }: any) {
+function AccountTypeTemplate({ imgURL, accountType, title, onClickFn, children, value }: any) {
 
   return (
     <BreBLayout title={title}>
+      <div className="flex">
       <p>Haz seleccionado</p>
       <h2 className="subtitle">{accountType}</h2>
       <Spacer />
@@ -17,11 +18,10 @@ function AccountTypeTemplate({ imgURL, accountType, title, onClickFn, children }
       <Spacer />
       {children}
       <Spacer />
-      <div className="align-center">
-        <Button className={`btn-enabled`} onClick={onClickFn}>
-          Continuar
-        </Button>
       </div>
+      <Button className={`btn align-center ${value ? 'btn-enabled' : 'btn-disabled'}`} onClick={onClickFn}>
+        Continuar
+      </Button>
     </BreBLayout>
   );
 }

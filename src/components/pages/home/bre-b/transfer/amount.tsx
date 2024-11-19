@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function Amount() {
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState("");
   const history = useNavigate();
+  const MAX_VALUE = 10000000;
 
   const selectAccountFrom = () => {
     history("/home/bre-b/transfer/from");
@@ -20,22 +21,46 @@ function Amount() {
 
   const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value;
-    setInputValue('$' + formatNumber(rawValue));
+    setInputValue("$" + formatNumber(rawValue));
   };
+
+  const numericValue = parseInt(inputValue.replace(/\D/g, "") || "0");
 
   return (
     <BreBLayout title="Ingresar monto">
       <div className={styles.container}>
         <p className="align-center">Ingresa el monto que vas a transferir</p>
-        <div className={`${styles.container__content}`}>
+        <div className={`flex`}>
+          <Spacer height={100} />
+          <Input
+            variation="quiet"
+            placeholder="$0"
+            type="text"
+            value={inputValue}
+            onChange={onChangeValue}
+            className={styles.inputValue}
+          />
           <Spacer />
-          <Input variation="quiet" placeholder="$0" type="text" value={inputValue} onChange={onChangeValue} className={styles.inputValue}/>
-          <Spacer />
+          {numericValue > MAX_VALUE ? (
+            <span className={styles.errorMessage}>
+              El valor supera el monto máximo permitido
+            </span>
+          ) : (
+            <span className={`${styles.alertMessage}`}>
+              El monto máximo permitido por día es de $10’000.000 COP
+            </span>
+          )}
         </div>
-        <div className={`${styles.btn} align-center`}>
-          <Button className={`btn-enabled`} onClick={selectAccountFrom}>Continuar</Button>
-        </div>
-        <Spacer/>
+        <Button
+          className={`${styles.btn} align-center ${
+            !numericValue || numericValue > MAX_VALUE
+              ? "btn-disabled"
+              : "btn-enabled"
+          }`}
+          onClick={selectAccountFrom}
+        >
+          Continuar
+        </Button>
       </div>
     </BreBLayout>
   );

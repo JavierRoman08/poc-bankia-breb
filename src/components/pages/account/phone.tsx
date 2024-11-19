@@ -30,6 +30,7 @@ function AccountPhone({ route }: any) {
           accountType={"Número de celular"}
           onClickFn={handleClick}
           title={`Agregar nueva cuenta`}
+          value={phoneNumber}
         >
           <p>Número de celular</p>
           <PhoneNumberField

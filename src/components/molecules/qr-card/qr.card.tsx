@@ -40,7 +40,8 @@ const QrCard = ({ icon, title, label, onShareFn }: QrCardProps) => {
         <div className={styles.dropdown}>
           <div className="row">
             <Option
-              icon={<Share2 size={15} onClick={onShareFn} />}
+              onClickFn={onShareFn} 
+              icon={<Share2 size={15} />}
               label={"Compartir"}
             />
           </div>

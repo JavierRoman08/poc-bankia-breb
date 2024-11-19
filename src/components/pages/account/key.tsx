@@ -30,6 +30,7 @@ function AccountKey({ route }: any) {
           accountType={"Clave personalizada"}
           onClickFn={handleClick}
           title={`Agregar nueva cuenta`}
+          value={key}
         >
           <p>Clave personalizada</p>
           <Input

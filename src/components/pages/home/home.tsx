@@ -22,12 +22,12 @@ function HomePage() {
   const history = useNavigate();
 
   const goToBreB = () => {
-    history("bre-b");
+    history("onboarding");
   };
 
   return (
     <section className={`${styles.home} container`}>
-      <nav className={`${styles.navbar} align-center`}>
+      <nav className={`${styles.navbar} align-center justify-between`}>
         <Bell className="color-typo" />
         <h1 className={`color-principal row title align-center`}>BankIA</h1>
         <LogOut className="color-typo" />
@@ -77,13 +77,13 @@ function HomePage() {
         />
       </div>
       <Spacer height={80} />
-      <nav className={`${styles.navbar_bottom} align-center`}>
+      <footer className={`${styles.footer} align-center justify-between`}>
         <Home size={30} />
         <Search size={30} />
         <Grid size={30} />
         <Unlock size={30} />
         <Settings size={30} />
-      </nav>
+      </footer>
     </section>
   );
 }

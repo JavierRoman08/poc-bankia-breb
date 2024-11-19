@@ -46,7 +46,6 @@ function BreB() {
           <Spacer height={20} />
           <h2 className="subtitle">Transacciones</h2>
           <Spacer height={20} />
-
           <div className={styles.optionsContainer}>
             <Seccion
               frame31304={<IoSwapHorizontal size={35} />}

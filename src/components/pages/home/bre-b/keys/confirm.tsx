@@ -37,7 +37,6 @@ function ConfirmKey() {
         <Button className={`btn-enabled`} onClick={saveKey}>
             Crear llave
         </Button>
-        <Spacer />
       </main>
     </BreBLayout>
   );
