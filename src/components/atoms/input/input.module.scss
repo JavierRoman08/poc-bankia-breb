@@ -1,7 +1,28 @@
-.input {
+@import "@styles/variables.scss";
+
+.inputContainer {
     width: 100%;
-    margin: 10px auto;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #E8E8ED;
+
+    &__label {
+        color: #304050;
+    }
+
+    &__field, &__eye {
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 4px 0px 0px 4px;
+        border: 1px solid #89949F;
+        outline: none;
+    }
+
+    &__eye {
+        width: auto;
+        display: flex;
+        align-items: center;
+        border: 1px solid #89949F;
+        border-radius: 0px 4px 4px 0px;
+        border-left: none;
+        padding: 15px;
+    }
 }

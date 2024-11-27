@@ -1,22 +1,19 @@
-import LogoB from "@/ui-components/LogoB";
 import styles from "./circle.option.module.scss";
-import * as Icons from "react-feather";
 
 interface CircleOptionProps {
-  iconName?: keyof typeof Icons;
-  description: string;
+  icon?: any;
+  imageUrl?: string;
+  label: string;
   onClickFn?: any;
 }
 
-const CircleOption = ({ iconName, description, onClickFn }: CircleOptionProps) => {
-  const IconComponent = iconName ? Icons[iconName] : '';
-
+const CircleOption = ({ icon, imageUrl, label, onClickFn }: CircleOptionProps) => {
   return (
     <button className={styles.option} onClick={onClickFn}>
-      <div className={`${IconComponent ? styles.option__icon : styles.option__bre_b}`}>
-        { IconComponent ? <IconComponent size={35} /> : <LogoB property1="Positive" /> }
+      <div className={styles.option__icon}>
+        { icon ?? <img src={imageUrl} alt="image_icon_logo" /> }
       </div>
-      <span className="body">{description}</span>
+      <span className="body">{label}</span>
     </button>
   );
 };

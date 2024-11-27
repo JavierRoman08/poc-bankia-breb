@@ -9,12 +9,13 @@ import Seccion from "@/ui-components/Seccion";
 import { IoSwapHorizontal } from "react-icons/io5";
 import { MdQrCodeScanner } from "react-icons/md";
 import CustomModal from "@/components/molecules/modal/modal";
+import CircleOption from "@/components/atoms/circle-option/circle.option";
 
 function BreB() {
   const [isModalActive, setIsModalActive] = useState(false);
   const history = useNavigate();
 
-  const handleTrasnfer = () => {
+  const handleTransfer = () => {
     setIsModalActive(!isModalActive);
   };
 
@@ -47,23 +48,9 @@ function BreB() {
           <h2 className="subtitle">Transacciones</h2>
           <Spacer height={20} />
           <div className={styles.optionsContainer}>
-            <Seccion
-              frame31304={<IoSwapHorizontal size={35} />}
-              label={"Transferir"}
-              onClick={handleTrasnfer}
-              className={styles.optionsContainer__item}
-            />
-            <Seccion
-              frame31304={<MdQrCodeScanner size={35} />}
-              label={"Mis Códigos QR"}
-              onClick={goToMyQRs}
-              className={styles.optionsContainer__item}
-            />
-            <Seccion
-              frame31304={<DollarSign size={35} />}
-              label={"Cobrar a alguien"}
-              className={styles.optionsContainer__item}
-            />
+            <CircleOption onClickFn={handleTransfer} icon={<IoSwapHorizontal size={30} />} label={"Transferir"} />
+            <CircleOption onClickFn={goToMyQRs} icon={<MdQrCodeScanner size={30} />} label={"Mis Códigos QR"} />        
+            <CircleOption icon={<DollarSign size={30} />} label={"Cobrar a alguien"} />
           </div>
           <Spacer />
           <h2 className="subtitle">Consultar</h2>
@@ -99,7 +86,7 @@ function BreB() {
           />
         </BreBLayout>
       </section>
-      <CustomModal isOpen={isModalActive} handleModal={handleTrasnfer}>
+      <CustomModal isOpen={isModalActive} handleModal={handleTransfer}>
       <h2 className="subtitle">¿Cómo deseas transferir?</h2>
           <Spacer height={10} />
           <p>Selecciona el medio con el que deseas transferir o pagar</p>

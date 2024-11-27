@@ -1,4 +1,26 @@
+@import "@styles/variables.scss";
+
+.container {
+  display: flex;
+  overflow: hidden;
+  background-color: #950404;
+  border-radius: 17px;
+  position: relative;
+
+  .buttonDelete {
+    width: 30%;
+    height: 100%;
+    border: 1px solid black;
+    max-width: 200px;
+    color: $color-white;
+    position: absolute;
+    margin: auto;
+    right: 0;
+  }
+}
+
 .card {
+    width: 100%;
     height: auto;
     border: 1px solid #ddd;
     border-radius: 16px;
@@ -57,3 +79,4 @@
     }
 }
   
+

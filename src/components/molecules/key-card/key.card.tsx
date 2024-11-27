@@ -32,6 +32,7 @@ const KeyCard = ({
   };
 
   return (
+    <div className={styles.container}>
     <div className={`${styles.card} ${!isActive ? styles.disabled : ''}`}>
       <div className="row align-center">
         <KeyType
@@ -75,6 +76,9 @@ const KeyCard = ({
         </div>
       </div>
     </div>
+    <button className={styles.buttonDelete}>
+      Eliminar
+    </button></div>
   );
 };
 

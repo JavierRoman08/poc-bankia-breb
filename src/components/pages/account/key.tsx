@@ -1,10 +1,12 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import CustomModal from "@/components/molecules/modal/modal";
 import AccountTypeTemplate from "@/components/templates/account.type.template";
-import { Button, Input } from "@aws-amplify/ui-react";
+import { Input } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import styles from "./account-types.module.scss";
 import { useState } from "react";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
+import InputTextComponent from "@/components/atoms/input/input";
 
 function AccountKey({ route }: any) {
   const FIXED_KEY = "abc123";
@@ -33,13 +35,13 @@ function AccountKey({ route }: any) {
           value={key}
         >
           <p>Clave personalizada</p>
-          <Input
-            variation="quiet"
-            placeholder="Ingrese la clave personalizada"
+          <InputTextComponent
             value={key}
             onChange={(e) => {
               setKey(e.target.value);
             }}
+            placeholder="Ingrese la clave personalizada"
+            className={styles.inputBasic}
           />
         </AccountTypeTemplate>
       </section>
@@ -55,12 +57,8 @@ function AccountKey({ route }: any) {
           <p>¿Deseas solicitar la portabilidad?</p>
           <Spacer height={10} />
           <div className={`${styles.buttons} col gap`}>
-            <Button className={`btn-enabled`} onClick={() => navigate("/home")}>
-              Si, Continuar
-            </Button>
-            <Button className={`btn-outline`} onClick={() => setIsModalActive(false)}>
-              No, Cancelar
-            </Button>
+            <CustomButtonComponent label={"Si, Continuar"} onClickFn={() => navigate("/home")} isEnabled={true} />
+            <CustomButtonComponent label={"No, Cancelar"} onClickFn={() => setIsModalActive(false)} isEnabled={true} className={styles.buttons__cancel} />
           </div>
         </div>
       </CustomModal>

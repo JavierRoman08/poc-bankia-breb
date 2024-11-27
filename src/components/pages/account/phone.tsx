@@ -1,15 +1,18 @@
 import CustomModal from "@/components/molecules/modal/modal";
 import AccountTypeTemplate from "@/components/templates/account.type.template";
-import { Button, PhoneNumberField } from "@aws-amplify/ui-react";
+import { PhoneNumberField } from "@aws-amplify/ui-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./account-types.module.scss";
 import Spacer from "@/components/atoms/spacer/spacer";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
+import InputTextComponent from "@/components/atoms/input/input";
 
 function AccountPhone({ route }: any) {
   const FIXED_NUMBER = "3100000000";
   const [isModalActive, setIsModalActive] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [countryCode, setCountryCode] = useState("+57");
 
   const navigate = useNavigate();
 
@@ -33,15 +36,27 @@ function AccountPhone({ route }: any) {
           value={phoneNumber}
         >
           <p>Número de celular</p>
-          <PhoneNumberField
-            type="tel"
-            defaultDialCode="+57"
-            label=""
-            descriptiveText=""
-            placeholder="Numero de celular"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
+          <div className={styles.inputCountryCode}>
+            <select
+              className={styles.inputCountryCode__picker}
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+            >
+              <option value="+1">+1</option>
+              <option value="+7">+7</option>
+              <option value="+52">+52</option>
+              <option value="+57">+57</option>
+              <option value="+91">+91</option>
+            </select>
+            <InputTextComponent
+              value={phoneNumber}
+              onChange={(e) => {
+                setPhoneNumber(e.target.value);
+              }}
+              placeholder="Número de celular"
+              className={styles.inputCountryCode__field}
+            />
+          </div>
         </AccountTypeTemplate>
       </section>
       <CustomModal
@@ -56,12 +71,17 @@ function AccountPhone({ route }: any) {
           <p>¿Deseas solicitar la portabilidad?</p>
           <Spacer height={10} />
           <div className={`${styles.buttons} col gap`}>
-            <Button className={`btn-enabled`} onClick={() => navigate("/home/bre-b/my-keys/portability")}>
-              Si, Continuar
-            </Button>
-            <Button className={`btn-outline`} onClick={() => setIsModalActive(false)}>
-              No, Cancelar
-            </Button>
+            <CustomButtonComponent
+              label={"Si, Continuar"}
+              onClickFn={() => navigate("/home")}
+              isEnabled={true}
+            />
+            <CustomButtonComponent
+              label={"No, Cancelar"}
+              onClickFn={() => setIsModalActive(false)}
+              isEnabled={true}
+              className={styles.buttons__cancel}
+            />
           </div>
         </div>
       </CustomModal>

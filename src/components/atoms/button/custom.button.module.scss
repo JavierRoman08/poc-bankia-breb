@@ -1,0 +1,21 @@
+@import "@styles/variables.scss";
+
+.btn {
+    width: 100%;
+    max-width: 350px;
+    font-weight: bold;
+    padding: 10px 16px;
+    transition: 0.5s;
+}
+
+.btnEnabled {
+  background-color: #00BD81 !important;
+  color: $color-white !important;
+}
+
+.btnDisabled {
+  background-color: #EFF0F0 !important;
+  color: #89949F !important;
+  pointer-events: none !important;
+  
+}

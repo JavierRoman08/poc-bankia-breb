@@ -1,10 +1,11 @@
 import AccountTypeTemplate from "@/components/templates/account.type.template";
-import { Button, Input } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import Spacer from "@/components/atoms/spacer/spacer";
 import CustomModal from "@/components/molecules/modal/modal";
 import styles from "./account-types.module.scss";
 import { useState } from "react";
+import InputTextComponent from "@/components/atoms/input/input";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 function AccountCode({ route }: any) {
   const FIXED_CODE = "12345";
@@ -12,6 +13,11 @@ function AccountCode({ route }: any) {
   const [code, setCode] = useState("");
 
   const navigate = useNavigate();
+
+  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawValue = e.target.value;
+    setCode(rawValue);
+  };
 
   const handleClick = () => {
     if (code == FIXED_CODE) {
@@ -32,13 +38,11 @@ function AccountCode({ route }: any) {
           value={code}
         >
           <p>Código de establecimiento</p>
-          <Input
-            variation="quiet"
-            placeholder="Escribe el código de establecimiento"
+          <InputTextComponent
             value={code}
-            onChange={(e) => {
-              setCode(e.target.value);
-            }}
+            onChange={onChangeValue}
+            placeholder="00 Escribe el código"
+            className={styles.inputBasic}
           />
         </AccountTypeTemplate>
       </section>
@@ -54,12 +58,8 @@ function AccountCode({ route }: any) {
           <p>¿Deseas solicitar la portabilidad?</p>
           <Spacer height={10} />
           <div className={`${styles.buttons} col gap`}>
-            <Button className={`btn-enabled`} onClick={() => navigate("/home")}>
-              Si, Continuar
-            </Button>
-            <Button className={`btn-outline`} onClick={() => setIsModalActive(false)}>
-              No, Cancelar
-            </Button>
+            <CustomButtonComponent label={"Si, Continuar"} onClickFn={() => navigate("/home")} isEnabled={true} />
+            <CustomButtonComponent label={"No, Cancelar"} onClickFn={() => setIsModalActive(false)} isEnabled={true} className={styles.buttons__cancel} />
           </div>
         </div>
       </CustomModal>

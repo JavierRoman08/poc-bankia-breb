@@ -1,10 +1,12 @@
-import { Button, Input } from "@aws-amplify/ui-react";
+import { Input } from "@aws-amplify/ui-react";
 import AccountTypeTemplate from "@/components/templates/account.type.template";
 import { useNavigate } from "react-router-dom";
 import Spacer from "@/components/atoms/spacer/spacer";
 import CustomModal from "@/components/molecules/modal/modal";
 import styles from "./account-types.module.scss";
 import { useState } from "react";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
+import InputTextComponent from "@/components/atoms/input/input";
 
 function AccountDocument({ route }: any) {
   const FIXED_DOCUMENT = "1234567890";
@@ -32,13 +34,13 @@ function AccountDocument({ route }: any) {
           value={document}
         >
           <p>Número de documento</p>
-          <Input
-            variation="quiet"
-            placeholder="Escriba el número de documento"
+          <InputTextComponent
             value={document}
             onChange={(e) => {
               setDocument(e.target.value);
             }}
+            placeholder="Escriba el número de documento"
+            className={styles.inputBasic}
           />
         </AccountTypeTemplate>
       </section>
@@ -54,12 +56,17 @@ function AccountDocument({ route }: any) {
           <p>¿Deseas solicitar la portabilidad?</p>
           <Spacer height={10} />
           <div className={`${styles.buttons} col gap`}>
-            <Button className={`btn-enabled`} onClick={() => navigate("/home")}>
-              Si, Continuar
-            </Button>
-            <Button className={`btn-outline`} onClick={() => setIsModalActive(false)}>
-              No, Cancelar
-            </Button>
+            <CustomButtonComponent
+              label={"Si, Continuar"}
+              onClickFn={() => navigate("/home")}
+              isEnabled={true}
+            />
+            <CustomButtonComponent
+              label={"No, Cancelar"}
+              onClickFn={() => setIsModalActive(false)}
+              isEnabled={true}
+              className={styles.buttons__cancel}
+            />
           </div>
         </div>
       </CustomModal>

@@ -1,3 +1,39 @@
+.inputBasic {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
 .buttons {
     width: 100%;
+
+    &__cancel {
+        background-color: transparent !important;
+        color: #0D1A26 !important;
+        border: 1px solid #89949F !important;
+    }
+}
+
+.inputCountryCode {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__picker {
+        width: 100%;
+        max-width: 120px;
+        background-color: transparent !important;
+        padding: 12px 5px !important;
+        height: 100%;
+        cursor: pointer;
+        outline: none;
+        border: 1px solid #89949F;
+        font-size: 16px;
+        border-radius: 4px 0px 0px 4px !important;
+        border-right: none;
+    }
+
+    &__field {
+        border-radius: 0px 4px 4px 0px !important;
+    }
 }

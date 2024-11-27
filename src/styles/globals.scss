@@ -126,8 +126,9 @@
 }
 
 .btn-outline {
-  color: #0D1A26;
+  color: #0D1A26 !important;
   border: 1px solid #89949F !important;
+  pointer-events: all !important;
 }
 
 .btn-disabled {
