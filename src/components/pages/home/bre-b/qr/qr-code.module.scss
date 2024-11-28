@@ -1,7 +1,9 @@
 @import "@styles/variables.scss";
 
 .container {
+    position: relative;
     width: 100%;
+    max-width: $breakpoint-sm;
     height: 100%;
     min-height: 100vh;
     padding: 20px;
@@ -10,6 +12,7 @@
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1;
+    margin: auto;
 }
 
 .container::before {
@@ -74,20 +77,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
 
-    &__item {
-        width: 100% !important;
-        height: 100% !important;
-        max-width: 120px !important;
-        margin: auto !important;
-        text-align: center !important;
-        cursor: pointer !important;
-
-        p {
-            color: white !important;
-        }
-    }
-
-    &__item:focus {
-        background-color: none !important;
+    .iconOption {
+        color: $color-white !important;
     }
 }

@@ -50,7 +50,7 @@ function BreB() {
           <div className={styles.optionsContainer}>
             <CircleOption onClickFn={handleTransfer} icon={<IoSwapHorizontal size={30} />} label={"Transferir"} />
             <CircleOption onClickFn={goToMyQRs} icon={<MdQrCodeScanner size={30} />} label={"Mis Códigos QR"} />        
-            <CircleOption icon={<DollarSign size={30} />} label={"Cobrar a alguien"} />
+            <CircleOption imageUrl="/cobrar.svg" label={"Cobrar a alguien"} />
           </div>
           <Spacer />
           <h2 className="subtitle">Consultar</h2>

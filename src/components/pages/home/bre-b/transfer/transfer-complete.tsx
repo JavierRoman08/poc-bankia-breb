@@ -7,6 +7,7 @@ import { FiInfo } from "react-icons/fi";
 import Seccion from "@/ui-components/Seccion";
 import { FileText, RotateCw, Star } from "react-feather";
 import CustomButtonComponent from "@/components/atoms/button/custom.button";
+import CircleOption from "@/components/atoms/circle-option/circle.option";
 
 function TransferCompleted() {
   const history = useNavigate();
@@ -45,21 +46,9 @@ function TransferCompleted() {
         />
         <Spacer />
         <div className={styles.optionsContainer}>
-          <Seccion
-            frame31304={<FileText size={35} />}
-            label={"Compartir soporte"}
-            className={styles.optionsContainer__item}
-          />
-          <Seccion
-            frame31304={<Star size={35} />}
-            label={"Agregar a favoritos"}
-            className={styles.optionsContainer__item}
-          />
-          <Seccion
-            frame31304={<RotateCw size={35} />}
-            label={"Realizar otro pago"}
-            className={styles.optionsContainer__item}
-          />
+          <CircleOption icon={<FileText size={30} />} label={"Compartir soporte"} />
+          <CircleOption icon={<Star size={30} />} label={"Agregar a favoritos"} />
+          <CircleOption icon={<RotateCw size={30} />} label={"Realizar otro pago"} />
         </div>
       </section>
       <CustomButtonComponent label={"Finalizar"} onClickFn={goToHome} isEnabled />          

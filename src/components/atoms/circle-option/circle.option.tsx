@@ -5,11 +5,12 @@ interface CircleOptionProps {
   imageUrl?: string;
   label: string;
   onClickFn?: any;
+  className?: any;
 }
 
-const CircleOption = ({ icon, imageUrl, label, onClickFn }: CircleOptionProps) => {
+const CircleOption = ({ icon, imageUrl, label, onClickFn, className }: CircleOptionProps) => {
   return (
-    <button className={styles.option} onClick={onClickFn}>
+    <button className={`${styles.option} ${className}`} onClick={onClickFn}>
       <div className={styles.option__icon}>
         { icon ?? <img src={imageUrl} alt="image_icon_logo" /> }
       </div>
