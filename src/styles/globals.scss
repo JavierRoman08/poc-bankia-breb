@@ -76,6 +76,14 @@
   font-size: $size-tiny;
 }
 
+// input
+
+.input-basic {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
 // blur
 
 .blurred {
@@ -126,9 +134,9 @@
 }
 
 .btn-outline {
+  background: white !important;
   color: #0D1A26 !important;
   border: 1px solid #89949F !important;
-  pointer-events: all !important;
 }
 
 .btn-disabled {

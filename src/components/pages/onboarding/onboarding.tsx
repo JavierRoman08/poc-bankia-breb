@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { Button } from "@aws-amplify/ui-react";
 import styles from "./onboarding.module.scss";
 import Spacer from "@/components/atoms/spacer/spacer";
 import { Pagination } from "swiper/modules";
@@ -11,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import { ChevronLeft } from "react-feather";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 const OnBoarding = () => {
   const history = useNavigate();
@@ -104,9 +104,7 @@ const OnBoarding = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <Button className={`${styles.stepButton} row align-center btn-enabled`} onClick={goToBreb}>
-        Continuar
-      </Button>
+      <CustomButtonComponent label={"Continuar"} onClickFn={goToHome} isEnabled className={`${styles.stepButton} row align-center`}/>        
     </section>
   );
 };

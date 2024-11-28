@@ -3,8 +3,8 @@ import BreBLayout from "@/components/templates/breb.layout";
 import { CreditCard } from "react-feather";
 import { useNavigate } from "react-router-dom";
 import DataResume from "@/components/molecules/data-resume/data.resume";
-import { Button } from "@aws-amplify/ui-react";
 import styles from './keys.module.scss';
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 function Portability() {
   const history = useNavigate();
@@ -48,9 +48,7 @@ function Portability() {
             <p>Agosto 21 2024 - 12:19 PM</p>
             <hr />
         </div>
-        <Button className={`btn-enabled`} onClick={verifyPortability}>
-            Continuar
-        </Button>
+        <CustomButtonComponent label={"Continuar"} onClickFn={verifyPortability} isEnabled />
       </main>
     </BreBLayout>
   );

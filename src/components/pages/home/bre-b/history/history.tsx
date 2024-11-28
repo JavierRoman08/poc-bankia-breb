@@ -7,17 +7,19 @@ import { ChevronDown } from "react-feather";
 import { useState } from "react";
 import CustomModal from "@/components/molecules/modal/modal";
 import {
-  Button,
-  Input,
   Radio,
   RadioGroupField,
   SelectField,
   TextAreaField,
 } from "@aws-amplify/ui-react";
+import InputTextComponent from "@/components/atoms/input/input";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 function History() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [returnType, setReturnType] = useState("total");
+  
+  const [valueAmount, setValueAmount] = useState("");
 
   const [fileName, setFileName] = useState("Adjuntar evidencia (opcional)");
 
@@ -113,10 +115,12 @@ function History() {
           <Radio value="partial">Devolucion parcial</Radio>
         </RadioGroupField>
         {returnType == "partial" ? (
-          <Input
-            variation="quiet"
-            placeholder="Escribe el monto"
+          <InputTextComponent
             type="number"
+            value={valueAmount}
+            onChange={(e) => setValueAmount(e.target.value)}
+            placeholder="Escribe el monto"
+            className={'input-basic'}
           />
         ) : null}
         <Spacer height={10} />
@@ -132,7 +136,9 @@ function History() {
             {fileName}
           </label>
           {/* Input file oculto */}
-          <Input type="file" id="fileInput" className={styles.fileInput} onChange={handleFileChange} />
+          <InputTextComponent
+            type="file"
+            onChange={handleFileChange} value={""} className={styles.fileInput} />
         </div>
         <Spacer height={10} />
         <span className="tiny">
@@ -141,13 +147,9 @@ function History() {
         </span>
         <Spacer height={20} />
         <div className={`col`}>
-          <Button className={`btn-enabled`} onClick={completeRequest}>
-            Solicitar devolucion
-          </Button>
+          <CustomButtonComponent label={"Solicitar devolución"} onClickFn={completeRequest} isEnabled className={styles.modalButton} />
           <Spacer height={10} />
-          <Button className={`btn-outline`} onClick={handelModal}>
-            Cancelar
-          </Button>
+          <CustomButtonComponent label={"Cancelar"} onClickFn={handelModal} isEnabled className={`btn-outline ${styles.modalButton}`} />
         </div>
         <Spacer height={20} />
       </CustomModal>

@@ -1,9 +1,9 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import styles from "@components/pages/home/bre-b/transfer/transfer.module.scss";
 import BreBLayout from "@/components/templates/breb.layout";
-import { Button } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 interface AuthCodeProps {
   nextRoute: string;
@@ -58,9 +58,7 @@ const AuthCode = ({nextRoute}: AuthCodeProps) =>  {
           Reenviar código
         </button>
         <div className={`${styles.btn} align-center flex`}>
-          <Button className={code.every((value) => value !== '') ? `btn-enabled` : `btn-disabled`} onClick={sendCode}>
-            Confirmar
-          </Button>
+          <CustomButtonComponent label={"Confirmar"} onClickFn={sendCode} isEnabled={code.every((value) => value !== '') }/>
         </div>
       </div>
     </BreBLayout>

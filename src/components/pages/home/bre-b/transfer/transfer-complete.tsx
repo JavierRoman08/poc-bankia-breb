@@ -1,11 +1,12 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import styles from "./transfer.module.scss";
-import { Button, TextField } from "@aws-amplify/ui-react";
+import { TextField } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FiInfo } from "react-icons/fi";
 import Seccion from "@/ui-components/Seccion";
 import { FileText, RotateCw, Star } from "react-feather";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 function TransferCompleted() {
   const history = useNavigate();
@@ -61,9 +62,7 @@ function TransferCompleted() {
           />
         </div>
       </section>
-      <Button className={`btn-enabled`} onClick={goToHome}>
-        Finalizar
-      </Button>
+      <CustomButtonComponent label={"Finalizar"} onClickFn={goToHome} isEnabled />          
       <Spacer  />
     </div>
   );

@@ -1,3 +1,4 @@
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 import Spacer from "@/components/atoms/spacer/spacer";
 import KeyCard from "@/components/molecules/key-card/key.card";
 import KeyType from "@/components/molecules/key-type/key.type";
@@ -141,13 +142,9 @@ function Keys() {
         </p>
         <Spacer height={20} />
         <div>
-          <Button className={`btn-enabled`} onClick={confirmKeyBlock}>
-            {keyActive ? "Bloquear" : "Activar"}
-          </Button>
+          <CustomButtonComponent label={keyActive ? "Bloquear" : "Activar"} onClickFn={confirmKeyBlock} isEnabled={true} />
           <Spacer height={10} />
-          <Button className={`btn-outline`} onClick={handleBlockModal}>
-            Cancelar
-          </Button>
+          <CustomButtonComponent label={"Cancelar"} onClickFn={handleBlockModal} isEnabled={true} className="btn-outline"/>
         </div>
       </CustomModal>
     </>

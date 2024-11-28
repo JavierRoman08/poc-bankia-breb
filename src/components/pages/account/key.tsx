@@ -1,7 +1,6 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import CustomModal from "@/components/molecules/modal/modal";
 import AccountTypeTemplate from "@/components/templates/account.type.template";
-import { Input } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import styles from "./account-types.module.scss";
 import { useState } from "react";
@@ -37,11 +36,11 @@ function AccountKey({ route }: any) {
           <p>Clave personalizada</p>
           <InputTextComponent
             value={key}
-            onChange={(e) => {
+            onChange={(e: any) => {
               setKey(e.target.value);
             }}
             placeholder="Ingrese la clave personalizada"
-            className={styles.inputBasic}
+            className={'input-basic'}
           />
         </AccountTypeTemplate>
       </section>

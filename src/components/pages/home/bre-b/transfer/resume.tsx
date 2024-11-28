@@ -1,11 +1,11 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import styles from "./transfer.module.scss";
 import BreBLayout from "@/components/templates/breb.layout";
-import { Button } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CustomModal from "@/components/molecules/modal/modal";
 import { ChevronRight } from "react-feather";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 function Resume() {
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false);
@@ -81,10 +81,8 @@ function Resume() {
               </div>
             </div>
             <div className={`${styles.btn} ${styles.container__content} align-center`}>
-              <Button className={`btn-enabled`} onClick={confirmTransfer}>
-                Confirmar datos
-              </Button>
-              <Button className={`btn-outline`} onClick={handleCancelModal}>Cancelar</Button>
+              <CustomButtonComponent label={"Confirmar datos"} onClickFn={confirmTransfer} isEnabled />          
+              <CustomButtonComponent label={"Cancelar"} onClickFn={handleCancelModal} isEnabled className={`btn-outline`} />
             </div>
           </div>
         </BreBLayout>
@@ -98,10 +96,8 @@ function Resume() {
         </p>
         <Spacer height={10} />
         <div className={`${styles.btn} ${styles.container__content} align-center`}>
-          <Button className={`btn-enabled`} onClick={goToHome}>
-            Continuar
-          </Button>
-          <Button className={`btn-outline`} onClick={handleCancelModal}>Cancelar</Button>
+          <CustomButtonComponent label={"Continuar"} onClickFn={goToHome} isEnabled />          
+          <CustomButtonComponent label={"Cancelar"} onClickFn={handleCancelModal} isEnabled className={`btn-outline`} />
         </div>
       </CustomModal>
     </div>

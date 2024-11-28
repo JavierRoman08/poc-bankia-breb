@@ -3,7 +3,7 @@ import styles from "./input.module.scss";
 import { Eye, EyeOff } from "react-feather";
 
 interface InputProps {
-  type?: "text" | "email" | "password" | "number";
+  type?: "text" | "email" | "password" | "number" | "file";
   placeholder?: string;
   value: string;
   onChange: any;

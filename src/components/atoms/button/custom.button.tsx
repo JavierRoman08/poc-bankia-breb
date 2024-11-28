@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const CustomButtonComponent = ({ label, onClickFn, isEnabled, className }: ButtonProps) => {
   return (
-    <button className={`align-center ${styles.btn} ${className} ${isEnabled ? styles.btnEnabled : styles.btnDisabled}`} onClick={onClickFn}>
+    <button className={`align-center ${styles.btn} ${isEnabled ? styles.btnEnabled : styles.btnDisabled} ${className}`} onClick={onClickFn}>
       {label}
     </button>
   );

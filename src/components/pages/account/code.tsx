@@ -42,7 +42,7 @@ function AccountCode({ route }: any) {
             value={code}
             onChange={onChangeValue}
             placeholder="00 Escribe el código"
-            className={styles.inputBasic}
+            className={'input-basic'}
           />
         </AccountTypeTemplate>
       </section>

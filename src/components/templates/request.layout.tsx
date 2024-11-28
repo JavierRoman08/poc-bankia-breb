@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { Button } from "@aws-amplify/ui-react";
 import styles from './request.layout.module.scss';
+import CustomButtonComponent from "../atoms/button/custom.button";
 
 interface RequestLayoutProps {
     title?: string;
@@ -24,9 +24,7 @@ const RequestLayout = ({title, message}: RequestLayoutProps) => {
           {message}
         </p>
       </div>
-      <Button className={`btn-enabled`} onClick={goToHome}>
-        Finalizar
-      </Button>
+      <CustomButtonComponent label={"Finalizar"} onClickFn={goToHome} isEnabled />
     </section>
   );
 }

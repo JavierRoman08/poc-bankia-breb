@@ -1,7 +1,6 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import CustomModal from "@/components/molecules/modal/modal";
 import AccountTypeTemplate from "@/components/templates/account.type.template";
-import { Input } from "@aws-amplify/ui-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./account-types.module.scss";
@@ -38,11 +37,11 @@ function AccountMail({ route }: any) {
           <InputTextComponent
             type="email"
             value={email}
-            onChange={(e) => {
+            onChange={(e: any) => {
               setEmail(e.target.value);
             }}
             placeholder="Ingresa tu correo"
-            className={styles.inputBasic}
+            className={'input-basic'}
           />
         </AccountTypeTemplate>
       </section>

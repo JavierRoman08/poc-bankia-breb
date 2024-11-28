@@ -1,4 +1,3 @@
-import { Input } from "@aws-amplify/ui-react";
 import AccountTypeTemplate from "@/components/templates/account.type.template";
 import { useNavigate } from "react-router-dom";
 import Spacer from "@/components/atoms/spacer/spacer";
@@ -36,11 +35,11 @@ function AccountDocument({ route }: any) {
           <p>Número de documento</p>
           <InputTextComponent
             value={document}
-            onChange={(e) => {
+            onChange={(e: any) => {
               setDocument(e.target.value);
             }}
             placeholder="Escriba el número de documento"
-            className={styles.inputBasic}
+            className={'input-basic'}
           />
         </AccountTypeTemplate>
       </section>

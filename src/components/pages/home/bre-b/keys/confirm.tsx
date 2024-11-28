@@ -3,8 +3,8 @@ import BreBLayout from "@/components/templates/breb.layout";
 import { CreditCard } from "react-feather";
 import { useNavigate } from "react-router-dom";
 import DataResume from "@/components/molecules/data-resume/data.resume";
-import { Button } from "@aws-amplify/ui-react";
 import styles from './keys.module.scss';
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 function ConfirmKey() {
   const history = useNavigate();
@@ -34,9 +34,7 @@ function ConfirmKey() {
                 onClickFn={undefined}
             />
         </div>
-        <Button className={`btn-enabled`} onClick={saveKey}>
-            Crear llave
-        </Button>
+        <CustomButtonComponent label={"Crear llave"} onClickFn={saveKey} isEnabled={true} />
       </main>
     </BreBLayout>
   );

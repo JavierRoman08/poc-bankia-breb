@@ -3,6 +3,7 @@ import { Button, SearchField } from "@aws-amplify/ui-react";
 import Contact from "@/components/molecules/contact/contact";
 import { useNavigate } from "react-router-dom";
 import BreBLayout from "@/components/templates/breb.layout";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 function Contacts() {
   const history = useNavigate();
@@ -25,9 +26,7 @@ function Contacts() {
         <Contact name={'Carlos sanabria rios'} accountNumber={'***********6940'} />
         <Spacer />
       </div>
-      <Button backgroundColor={'#00BD81'} color={'white'} onClick={selectAccount}>
-        Nuevo contacto
-      </Button>
+      <CustomButtonComponent label="Nuevo contacto" onClickFn={selectAccount} isEnabled />
     </BreBLayout>
   );
 }

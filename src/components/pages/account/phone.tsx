@@ -1,6 +1,5 @@
 import CustomModal from "@/components/molecules/modal/modal";
 import AccountTypeTemplate from "@/components/templates/account.type.template";
-import { PhoneNumberField } from "@aws-amplify/ui-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./account-types.module.scss";
@@ -49,8 +48,9 @@ function AccountPhone({ route }: any) {
               <option value="+91">+91</option>
             </select>
             <InputTextComponent
+            type="number"
               value={phoneNumber}
-              onChange={(e) => {
+              onChange={(e: any) => {
                 setPhoneNumber(e.target.value);
               }}
               placeholder="Número de celular"

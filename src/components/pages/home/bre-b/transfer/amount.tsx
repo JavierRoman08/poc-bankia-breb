@@ -1,9 +1,10 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import styles from "./amount.module.scss";
 import BreBLayout from "@/components/templates/breb.layout";
-import { Button, Input } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import CustomButtonComponent from "@/components/atoms/button/custom.button";
+import InputTextComponent from "@/components/atoms/input/input";
 
 function Amount() {
   const [inputValue, setInputValue] = useState("");
@@ -32,13 +33,11 @@ function Amount() {
         <p className="align-center">Ingresa el monto que vas a transferir</p>
         <div className={`flex`}>
           <Spacer height={100} />
-          <Input
-            variation="quiet"
-            placeholder="$0"
-            type="text"
+          <InputTextComponent
             value={inputValue}
             onChange={onChangeValue}
-            className={styles.inputValue}
+            placeholder="$0"
+            className={'input-basic align-center'}
           />
           <Spacer />
           {numericValue > MAX_VALUE ? (
@@ -51,16 +50,11 @@ function Amount() {
             </span>
           )}
         </div>
-        <Button
-          className={`${styles.btn} align-center ${
-            !numericValue || numericValue > MAX_VALUE
-              ? "btn-disabled"
-              : "btn-enabled"
-          }`}
-          onClick={selectAccountFrom}
-        >
-          Continuar
-        </Button>
+        <CustomButtonComponent
+              label={"Continuar"}
+              onClickFn={selectAccountFrom}
+              isEnabled={numericValue !== 0 && numericValue < MAX_VALUE}
+            />
       </div>
     </BreBLayout>
   );
