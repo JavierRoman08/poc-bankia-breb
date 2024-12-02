@@ -40,26 +40,6 @@ hr {
     color: $color-links;
 }
 
-.code {
-    justify-content: center;
-    gap: 10px;
-
-    input {
-        outline: none;
-        width: 40px;
-        height: 60px;
-        border-radius: 12px;
-        border: 1px solid #89949F;
-        color: $color-links;
-        background-color: #EFF0F0;
-        text-align: center;
-    }
-
-    input:focus {
-        border: 2px solid $color-links;
-    }
-}
-
 .transferContainer {
     width: 100%;
     min-height: 100vh;
@@ -104,5 +84,15 @@ hr {
 
     &__item:focus {
         background-color: none !important;
+    }
+}
+
+.detailContainer {
+    color: #304050;
+    border-bottom: 1px solid #89949F !important;
+
+    p {
+        padding: 10px;
+        color: $color-typography;
     }
 }

@@ -8,9 +8,9 @@
 }
 
 .flex {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 .gap {
@@ -143,4 +143,14 @@
   background-color: #EFF0F0 !important;
   color: #89949F !important;
   pointer-events: none !important;
+}
+
+// colors
+
+.bg-color-primary {
+  background-color: $color-bg !important;
+}
+
+.bg-color-secondary {
+  background-color: $color-bg-2 !important;
 }

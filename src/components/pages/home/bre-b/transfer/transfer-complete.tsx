@@ -1,10 +1,8 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import styles from "./transfer.module.scss";
-import { TextField } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FiInfo } from "react-icons/fi";
-import Seccion from "@/ui-components/Seccion";
 import { FileText, RotateCw, Star } from "react-feather";
 import CustomButtonComponent from "@/components/atoms/button/custom.button";
 import CircleOption from "@/components/atoms/circle-option/circle.option";
@@ -33,17 +31,15 @@ function TransferCompleted() {
           <FiInfo /> Detalles de la operación
         </h4>
         <Spacer height={20} />
-        <TextField
-          label="Producto origen"
-          variation="quiet"
-          defaultValue={"Cuenta de ahorros BankIA"}
-        />
-        <Spacer height={20} />
-        <TextField
-          label="Recibe"
-          variation="quiet"
-          defaultValue={"Pedrito Perez"}
-        />
+        <div className={styles.detailContainer}>
+          <label htmlFor="origin_product">Producto origen</label>
+          <p>Cuenta de ahorros BankIA</p>
+        </div>
+        <Spacer height={15} />
+        <div className={styles.detailContainer}>
+          <label htmlFor="receiver">Recibe</label>
+          <p>Pedro Perez</p>
+        </div>
         <Spacer />
         <div className={styles.optionsContainer}>
           <CircleOption icon={<FileText size={30} />} label={"Compartir soporte"} />
