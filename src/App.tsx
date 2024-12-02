@@ -18,7 +18,7 @@ import TransferCompleted from '@components/pages/home/bre-b/transfer/transfer-co
 import QrCode from '@components/pages/home/bre-b/qr/qr-code';
 import History from '@components/pages/home/bre-b/history/history';
 import Keys from '@components/pages/home/bre-b/keys/keys';
-import KeysSelectAccount from './components/pages/home/bre-b/keys/select-account';
+import KeysSelectAccount from './components/pages/home/bre-b/keys/key-select-account';
 import ConfirmKey from '@/components/pages/home/bre-b/keys/confirm';
 import ReturnConfirmRequest from '@components/pages/home/bre-b/history/request';
 import KeyCreationComplete from './components/pages/home/bre-b/keys/key.creation';
