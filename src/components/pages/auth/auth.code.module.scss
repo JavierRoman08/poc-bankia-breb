@@ -1,0 +1,38 @@
+@import "@styles/variables.scss";
+
+.code {
+    justify-content: center;
+    gap: 10px;
+
+    input {
+        outline: none;
+        width: 40px;
+        height: 60px;
+        border-radius: 12px;
+        border: 1px solid #89949F;
+        color: $color-links;
+        background-color: #EFF0F0;
+        text-align: center;
+    }
+
+    input:focus {
+        border: 2px solid $color-links;
+    }
+}
+
+.btn {
+    width: 100%;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.alertMessage {
+    width: 100%;
+    text-align: left;
+    max-width: 350px;
+    padding: 12px 16px;
+    background-color: #FCE9E9;
+    color: #660000;
+}
