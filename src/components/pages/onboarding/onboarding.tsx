@@ -4,6 +4,7 @@ import Spacer from "@/components/atoms/spacer/spacer";
 import { Pagination } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,6 +15,7 @@ import CustomButtonComponent from "@/components/atoms/button/custom.button";
 
 const OnBoarding = () => {
   const history = useNavigate();
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
   const goToHome = () => {
     history("/home");
@@ -21,6 +23,14 @@ const OnBoarding = () => {
 
   const goToBreb = () => {
     history("/home/bre-b");
+  };
+
+  const handleContinue = () => {
+    if (swiperInstance && swiperInstance.activeIndex < swiperInstance.slides.length - 1) {
+      swiperInstance.slideNext();
+    } else {
+      goToBreb(); // Redirige si está en el último slide
+    }
   };
 
   return (
@@ -40,7 +50,11 @@ const OnBoarding = () => {
       </div>
       <Spacer />
       <Swiper
-        pagination={true}
+        onSwiper={setSwiperInstance} // Obtén la instancia del swiper
+        pagination={{
+          clickable: true,
+          el: styles.customPagination
+        }}
         modules={[Pagination]}
         className={styles.mySwiper}
       >
@@ -104,7 +118,12 @@ const OnBoarding = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <CustomButtonComponent label={"Continuar"} onClickFn={goToHome} isEnabled className={`${styles.stepButton} row align-center`}/>        
+      <CustomButtonComponent
+        label={"Continuar"}
+        onClickFn={handleContinue}
+        isEnabled
+        className={`${styles.stepButton} row align-center`}
+      />
     </section>
   );
 };

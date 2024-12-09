@@ -154,3 +154,16 @@
 .bg-color-secondary {
   background-color: $color-bg-2 !important;
 }
+
+// swiper
+.swiper-pagination-bullet {
+  width: 13px !important;
+  height: 13px !important;
+  background-color: #fff !important;
+  opacity: 0.4 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: #00EBA0 !important;
+}
