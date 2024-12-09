@@ -18,23 +18,24 @@ import TransferCompleted from '@components/pages/home/bre-b/transfer/transfer-co
 import QrCode from '@components/pages/home/bre-b/qr/qr-code';
 import History from '@components/pages/home/bre-b/history/history';
 import Keys from '@components/pages/home/bre-b/keys/keys';
-import KeysSelectAccount from './components/pages/home/bre-b/keys/key-select-account';
+import KeysSelectAccount from '@components/pages/home/bre-b/keys/key-select-account';
 import ConfirmKey from '@/components/pages/home/bre-b/keys/confirm';
 import ReturnConfirmRequest from '@components/pages/home/bre-b/history/request';
-import KeyCreationComplete from './components/pages/home/bre-b/keys/key.creation';
+import KeyCreationComplete from '@components/pages/home/bre-b/keys/key.creation';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Suspense } from 'react';
-import MyQRs from './components/pages/home/bre-b/my-qrs/my-qrs';
-import ShareQR from './components/pages/home/bre-b/my-qrs/share-qr';
-import GeneratedQR from './components/pages/home/bre-b/my-qrs/generated-qr';
-import ShareCompleted from './components/pages/home/bre-b/my-qrs/share-completed';
-import Portability from './components/pages/home/bre-b/keys/portability';
-import PortabilityRequest from './components/pages/home/bre-b/keys/portability-request';
-import OnBoarding from './components/pages/onboarding/onboarding';
+import MyQRs from '@components/pages/home/bre-b/my-qrs/my-qrs';
+import ShareQR from '@components/pages/home/bre-b/my-qrs/share-qr';
+import GeneratedQR from '@components/pages/home/bre-b/my-qrs/generated-qr';
+import ShareCompleted from '@components/pages/home/bre-b/my-qrs/share-completed';
+import Portability from '@components/pages/home/bre-b/keys/portability';
+import PortabilityRequest from '@components/pages/home/bre-b/keys/portability-request';
+import OnBoarding from '@components/pages/onboarding/onboarding';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import DeleteRequest from '@components/pages/home/bre-b/keys/delete-request';
 
 function App() {
 
@@ -90,6 +91,8 @@ function App() {
             <Route path="/home/bre-b/my-keys/select-account" element={<KeysSelectAccount />} />
             <Route path="/home/bre-b/my-keys/select-account/confirm" element={<ConfirmKey />} />
             <Route path="/home/bre-b/my-keys/select-account/confirm/finish" element={<KeyCreationComplete />} />
+            <Route path="/home/bre-b/my-keys/delete/security-code" element={<AuthCode nextRoute='/home/bre-b/my-keys/delete/request'/>} />
+            <Route path="/home/bre-b/my-keys/delete/request" element={<DeleteRequest />} />
 
             {/* Ruta de portabilidad */}
 

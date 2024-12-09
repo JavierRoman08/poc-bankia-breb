@@ -4,7 +4,6 @@ import KeyCard from "@/components/molecules/key-card/key.card";
 import KeyType from "@/components/molecules/key-type/key.type";
 import CustomModal from "@/components/molecules/modal/modal";
 import BreBLayout from "@/components/templates/breb.layout";
-import { Button } from "@aws-amplify/ui-react";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -18,10 +17,15 @@ import { BiBuilding, BiQr } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
 function Keys() {
+  const [isModalDeleteActive, setIsModalDeleteActive] = useState(false)
   const [isModalBlockActive, setIsModalBlockActive] = useState(false);
   const [isModalActive, setIsModalActive] = useState(false);
   const [keyActive, setKeyActive] = useState(true);
   const history = useNavigate();
+
+  const handleDeleteModal = () => {
+    setIsModalDeleteActive(!isModalDeleteActive)
+  }
 
   const handleShareModal = () => {
     setIsModalActive(!isModalActive);
@@ -34,6 +38,10 @@ function Keys() {
   const confirmKeyBlock = () => {
     setKeyActive(!keyActive);
     handleBlockModal();
+  };
+
+  const confirmKeyDelete = () => {
+    history('delete/security-code')
   };
 
   // const goDocument = () => {
@@ -59,7 +67,7 @@ function Keys() {
   return (
     <>
       <section
-        className={`${isModalActive || isModalBlockActive ? "blurred" : ""}`}
+        className={`${isModalActive || isModalBlockActive || isModalDeleteActive? "blurred" : ""}`}
       >
         <BreBLayout title="Mis llaves">
           <div className={`tiny`}>
@@ -74,6 +82,7 @@ function Keys() {
                 title={"Documento de identidad"}
                 label={"Registrar llave"}
                 onBlockFn={handleBlockModal}
+                onDeleteFn={handleDeleteModal}
                 onShareFn={handleShareModal}
                 isActive={keyActive}
               />
@@ -145,6 +154,20 @@ function Keys() {
           <CustomButtonComponent label={keyActive ? "Bloquear" : "Activar"} onClickFn={confirmKeyBlock} isEnabled={true} />
           <Spacer height={10} />
           <CustomButtonComponent label={"Cancelar"} onClickFn={handleBlockModal} isEnabled={true} className="btn-outline"/>
+        </div>
+      </CustomModal>
+      <CustomModal isOpen={isModalDeleteActive} handleModal={handleDeleteModal}>
+        <h2 className="subtitle">
+          ¿Deseas eliminar esta llave?
+        </h2>
+        <Spacer height={20} />
+        <p>Documento de identidad</p>
+        <p>1203912313</p>
+        <Spacer height={20} />
+        <div>
+          <CustomButtonComponent label={"Si, eliminar"} onClickFn={confirmKeyDelete} isEnabled={true} />
+          <Spacer height={10} />
+          <CustomButtonComponent label={"Cancelar"} onClickFn={handleDeleteModal} isEnabled={true} className="btn-outline"/>
         </div>
       </CustomModal>
     </>

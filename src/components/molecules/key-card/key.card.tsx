@@ -11,6 +11,7 @@ interface KeyCardProps {
   title: string;
   label: string;
   onBlockFn: any;
+  onDeleteFn: any;
   onShareFn?: any;
   onEditFn?: any;
   isActive?: boolean;
@@ -21,6 +22,7 @@ const KeyCard = ({
   title,
   label,
   onBlockFn,
+  onDeleteFn,
   onShareFn,
   onEditFn,
   isActive,
@@ -135,7 +137,7 @@ const KeyCard = ({
           </div>
         </div>
       </div>
-      <button className={`${styles.buttonDelete} row align-center gap bold`} onClick={()=> console.log('daksdk')}>Eliminar <Trash /></button>
+      <button className={`${styles.buttonDelete} row align-center gap bold`} onClick={onDeleteFn}>Eliminar <Trash /></button>
     </div>
   );
 };
