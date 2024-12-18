@@ -88,6 +88,12 @@ function App() {
             <Route path="/home/bre-b/my-keys/create-key/key" element={<AccountKey route={'/home/bre-b/my-keys/select-account'} />} />
             <Route path="/home/bre-b/my-keys/create-key/code" element={<AccountCode route={'/home/bre-b/my-keys/select-account'} />} />
             <Route path="/home/bre-b/my-keys/create-key/email" element={<AccountMail route={'/home/bre-b/my-keys/select-account'} />} />
+
+            <Route path="/home/bre-b/my-keys/edit-key/document" element={<AccountDocument route={'/home/bre-b/my-keys/edit-key/select-account'} />} />
+            <Route path="/home/bre-b/my-keys/edit-key/select-account" element={<KeysSelectAccount />} />
+            <Route path="/home/bre-b/my-keys/edit-key/select-account/confirm" element={<ConfirmKey />} />
+            <Route path="/home/bre-b/my-keys/edit-key/select-account/confirm/finish" element={<KeyCreationComplete />} />
+
             <Route path="/home/bre-b/my-keys/select-account" element={<KeysSelectAccount />} />
             <Route path="/home/bre-b/my-keys/select-account/confirm" element={<ConfirmKey />} />
             <Route path="/home/bre-b/my-keys/select-account/confirm/finish" element={<KeyCreationComplete />} />

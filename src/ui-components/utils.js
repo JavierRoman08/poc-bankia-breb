@@ -689,7 +689,7 @@ const checkValidation = (value, validation) => {
       let isInvalidJSON = false;
       try {
         JSON.parse(value);
-      } catch (e) {
+      } catch (e: any) {
         isInvalidJSON = true;
       }
       return {
@@ -713,7 +713,7 @@ const checkValidation = (value, validation) => {
       let isInvalidUrl = false;
       try {
         new URL(value);
-      } catch (e) {
+      } catch (e: any) {
         isInvalidUrl = true;
       }
       return {

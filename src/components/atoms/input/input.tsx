@@ -25,7 +25,7 @@ const InputTextComponent = ({
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleShowPassword = (e) => {
+  const handleShowPassword = (e: any) => {
     e.preventDefault()
     setShowPassword(!showPassword);
   };

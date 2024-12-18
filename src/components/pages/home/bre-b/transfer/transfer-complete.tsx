@@ -42,13 +42,30 @@ function TransferCompleted() {
         </div>
         <Spacer />
         <div className={styles.optionsContainer}>
-          <CircleOption icon={<FileText size={30} />} label={"Compartir soporte"} />
-          <CircleOption icon={<Star size={30} />} label={"Agregar a favoritos"} />
-          <CircleOption icon={<RotateCw size={30} />} label={"Realizar otro pago"} />
+          <CircleOption
+            icon={<FileText size={30} />}
+            label={"Compartir soporte"}
+            className={`colorIconSecondary`}
+          />
+          <CircleOption
+            icon={<Star size={30} />}
+            label={"Agregar a favoritos"}
+            className={`colorIconSecondary`}
+          />
+          <CircleOption
+            icon={<RotateCw size={30} />}
+            label={"Realizar otro pago"}
+            className={`colorIconSecondary`}
+          />
         </div>
       </section>
-      <CustomButtonComponent label={"Finalizar"} onClickFn={goToHome} isEnabled />          
-      <Spacer  />
+      <Spacer/>
+      <CustomButtonComponent
+        label={"Finalizar"}
+        onClickFn={goToHome}
+        isEnabled
+      />
+      <Spacer />
     </div>
   );
 }

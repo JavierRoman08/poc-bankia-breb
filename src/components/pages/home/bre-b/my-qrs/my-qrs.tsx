@@ -1,7 +1,6 @@
 import Spacer from "@/components/atoms/spacer/spacer";
 import QrCard from "@/components/molecules/qr-card/qr.card";
 import BreBLayout from "@/components/templates/breb.layout";
-import { useState } from "react";
 import {
   CreditCard,
   Smartphone,
@@ -9,7 +8,6 @@ import {
 import { useNavigate } from "react-router-dom";
 
 function MyQRs() {
-  const [isModalActive, setIsModalActive] = useState(false);
   const history = useNavigate();
 
   const shareQr = () => {

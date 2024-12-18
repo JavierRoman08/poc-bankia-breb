@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./qr-code.module.scss";
 import { ChevronLeft, Image } from "react-feather";
-import Seccion from "@/ui-components/Seccion";
 import { PiFlashlight } from "react-icons/pi";
 import Spacer from "@/components/atoms/spacer/spacer";
 import CircleOption from "@/components/atoms/circle-option/circle.option";

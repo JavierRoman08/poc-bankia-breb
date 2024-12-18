@@ -64,6 +64,10 @@ function Keys() {
     history("create-key/key");
   };
 
+  const handleEditKey = () => {
+    history('edit-key/document')
+  }
+
   return (
     <>
       <section
@@ -84,6 +88,7 @@ function Keys() {
                 onBlockFn={handleBlockModal}
                 onDeleteFn={handleDeleteModal}
                 onShareFn={handleShareModal}
+                onEditFn={handleEditKey}
                 isActive={keyActive}
               />
               <KeyType
@@ -140,7 +145,7 @@ function Keys() {
       <CustomModal isOpen={isModalBlockActive} handleModal={handleBlockModal}>
         <h2 className="subtitle">
           {keyActive
-            ? "¿Quieres desactivar esta llave temporalmente?"
+            ? "¿Quieres bloquear esta llave temporalmente?"
             : "¿Quieres activar esta llave?"}
         </h2>
         <Spacer height={10} />

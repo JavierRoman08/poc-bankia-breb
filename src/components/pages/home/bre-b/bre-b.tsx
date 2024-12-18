@@ -71,13 +71,19 @@ function BreB() {
               onClickFn={handleTransfer}
               icon={<IoSwapHorizontal size={30} />}
               label={"Transferir"}
+              className={`colorIconSecondary`}
             />
             <CircleOption
               onClickFn={goToMyQRs}
               icon={<MdQrCodeScanner size={30} />}
               label={"Mis Códigos QR"}
+              className={`colorIconSecondary`}
             />
-            <CircleOption imageUrl="/cobrar.svg" label={"Cobrar a alguien"} />
+            <CircleOption
+              imageUrl="/cobrar.svg"
+              label={"Cobrar a alguien"}
+              className={`colorIconSecondary`}
+            />
           </div>
           <Spacer />
           <h2 className="subtitle">Consultar</h2>

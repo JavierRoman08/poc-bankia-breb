@@ -34,11 +34,36 @@ function SelectAccount() {
       <h2 className="subtitle align-center">Selecciona el tipo de cuenta</h2>
       <Spacer />
       <div className={`${styles.accountOptionsContainer} gap`}>
-        <CircleOption onClickFn={goDocument} icon={<CreditCard size={30} />} label={"Documento de identidad"} />
-        <CircleOption onClickFn={goPhone} icon={<Smartphone size={30} />} label={"Número de celular"} />
-        <CircleOption onClickFn={goEmail} icon={<Mail size={30} />} label={"Correo electrónico"} />
-        <CircleOption onClickFn={goKey} icon={<Lock size={30} />} label={"Clave personalizada"} />
-        <CircleOption onClickFn={goCode} icon={<BiBuilding size={30} />} label={"Código de establecimiento"} />
+        <CircleOption
+          onClickFn={goDocument}
+          icon={<CreditCard size={30} />}
+          label={"Documento de identidad"}
+          className={`colorIconSecondary`}
+        />
+        <CircleOption
+          onClickFn={goPhone}
+          icon={<Smartphone size={30} />}
+          label={"Número de celular"}
+          className={`colorIconSecondary`}
+        />
+        <CircleOption
+          onClickFn={goEmail}
+          icon={<Mail size={30} />}
+          label={"Correo electrónico"}
+          className={`colorIconSecondary`}
+        />
+        <CircleOption
+          onClickFn={goKey}
+          icon={<Lock size={30} />}
+          label={"Clave personalizada"}
+          className={`colorIconSecondary`}
+        />
+        <CircleOption
+          onClickFn={goCode}
+          icon={<BiBuilding size={30} />}
+          label={"Código de establecimiento"}
+          className={`colorIconSecondary`}
+        />
       </div>
     </BreBLayout>
   );

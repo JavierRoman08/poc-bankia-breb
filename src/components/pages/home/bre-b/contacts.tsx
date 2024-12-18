@@ -1,5 +1,5 @@
 import Spacer from "@/components/atoms/spacer/spacer";
-import { Button, SearchField } from "@aws-amplify/ui-react";
+import { SearchField } from "@aws-amplify/ui-react";
 import Contact from "@/components/molecules/contact/contact";
 import { useNavigate } from "react-router-dom";
 import BreBLayout from "@/components/templates/breb.layout";
@@ -13,7 +13,7 @@ function Contacts() {
   };
 
   return (
-    <BreBLayout title="Mis Contactos">
+    <BreBLayout title="Mis contactos">
       <div className="flex">
         <p className="body">Lista de favoritos</p>
         <Spacer height={20} />

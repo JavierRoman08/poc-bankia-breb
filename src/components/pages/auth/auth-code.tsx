@@ -84,8 +84,8 @@ const AuthCode = ({ nextRoute }: AuthCodeProps) => {
               ref={(el) => (inputRefs.current[index] = el!)} // Asigna la referencia al arreglo
               type="text"
               value={value}
-              onChange={(e) => handleInputChange(index, e.target.value)}
-              onKeyDown={(e) => handleKeyDown(index, e)}
+              onChange={(e: any) => handleInputChange(index, e.target.value)}
+              onKeyDown={(e: any) => handleKeyDown(index, e)}
               maxLength={1}
               disabled={counter >= MAX_ATTEMPS}
             />

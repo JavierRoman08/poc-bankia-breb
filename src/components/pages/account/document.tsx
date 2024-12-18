@@ -38,7 +38,7 @@ function AccountDocument({ route }: any) {
             onChange={(e: any) => {
               setDocument(e.target.value);
             }}
-            placeholder="Escriba el número de documento"
+            placeholder="Escribe el número de documento"
             className={'input-basic'}
           />
         </AccountTypeTemplate>

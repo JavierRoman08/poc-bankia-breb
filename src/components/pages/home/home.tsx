@@ -40,7 +40,7 @@ function HomePage() {
         <CircleOption icon={<Send size={30} />} label={"Enviar dinero"} />
         <CircleOption icon={<CreditCard size={30} />} label={"Pagar tarjetas"} />
         <CircleOption icon={<DollarSign size={30} />} label={"Pagar creditos"} />
-        <CircleOption imageUrl="breb-isotype.svg" label={"Bre-B"} onClickFn={goToBreB} />
+        <CircleOption imageUrl="breb-isotype.svg" label={"Bre-B"} onClickFn={goToBreB} className={styles.buttonBreb}/>
         <CircleOption icon={<FileText size={30} />} label={"Consultar extractos"} />
         <CircleOption icon={<Calendar size={30} />} label={"Próximos pagos"} />
       </div>

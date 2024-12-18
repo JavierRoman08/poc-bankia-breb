@@ -58,7 +58,7 @@ function ShareQR() {
               legend=""
               name="codeType"
               value={codeType}
-              onChange={(e) => setCodeType(e.target.value)}
+              onChange={(e: any) => setCodeType(e.target.value)}
             >
               <Radio value="withValue">Con valor</Radio>
               <Radio value="withoutValue">Sin valor</Radio>
@@ -70,7 +70,7 @@ function ShareQR() {
                 placeholder="Escribe el monto"
                 className={"input-basic"}
                 value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                onChange={(e: any) => setAmount(e.target.value)}
               />
             ) : null}
           </div>

@@ -26,7 +26,10 @@ const OnBoarding = () => {
   };
 
   const handleContinue = () => {
-    if (swiperInstance && swiperInstance.activeIndex < swiperInstance.slides.length - 1) {
+    if (
+      swiperInstance &&
+      swiperInstance.activeIndex < swiperInstance.slides.length - 1
+    ) {
       swiperInstance.slideNext();
     } else {
       goToBreb(); // Redirige si está en el último slide
@@ -37,7 +40,9 @@ const OnBoarding = () => {
     <section className={`${styles.container}`}>
       <nav className={`${styles.navbar}`}>
         <ChevronLeft className={styles.arrow} size={30} onClick={goToHome} />
-        <button className="link bold" onClick={goToBreb}>Omitir</button>
+        <button className="link bold" onClick={goToBreb}>
+          Omitir
+        </button>
       </nav>
       <Spacer height={80} />
       <div>
@@ -53,7 +58,7 @@ const OnBoarding = () => {
         onSwiper={setSwiperInstance} // Obtén la instancia del swiper
         pagination={{
           clickable: true,
-          el: styles.customPagination
+          el: styles.customPagination,
         }}
         modules={[Pagination]}
         className={styles.mySwiper}
@@ -90,11 +95,11 @@ const OnBoarding = () => {
                 className={styles.step}
               />
               <Spacer />
-              <h2 className="subtitle">Pagos rápidos y seguros</h2>
+              <h2 className="subtitle">Protección con llaves de seguridad</h2>
               <Spacer />
               <p className="tiny">
-                Realiza o recibe pagos de manera instantánea, desde y hacia
-                cualquier banco. No importa el día y la hora.
+                Crea y gestiona tus llaves de seguridad personalizadas para
+                garantizar la autenticidad y protección de cada transacción.
               </p>
             </section>
           </div>
@@ -108,11 +113,11 @@ const OnBoarding = () => {
                 className={styles.step}
               />
               <Spacer />
-              <h2 className="subtitle">Pagos rápidos y seguros</h2>
+              <h2 className="subtitle">Control total de tus operaciones</h2>
               <Spacer />
               <p className="tiny">
-                Realiza o recibe pagos de manera instantánea, desde y hacia
-                cualquier banco. No importa el día y la hora.
+                Monitorea y gestiona tus pagos en tiempo real, asegurando la
+                transparencia y el control sobre tu dinero.
               </p>
             </section>
           </div>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./key.card.module.scss";
-import { ChevronDown, ChevronUp, Edit, EyeOff, Share2, Trash } from "react-feather";
+import { ChevronDown, ChevronUp, Edit, Eye, EyeOff, Share2, Trash } from "react-feather";
 import KeyType from "../key-type/key.type";
 import { SwitchField } from "@aws-amplify/ui-react";
 import Spacer from "@/components/atoms/spacer/spacer";
@@ -27,21 +27,26 @@ const KeyCard = ({
   onEditFn,
   isActive,
 }: KeyCardProps) => {
+  const [showData, setShowData] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false);
   const [startX, setStartX] = useState(null);
   const [translateX, setTranslateX] = useState(0);
   const [widthRoot, setWidthRoot] = useState(0);
-  const itemRef = useRef(null)
+  const itemRef = useRef<HTMLDivElement>(null)
   
+  const handleShowData = () => {
+    setShowData(!showData)
+  }
+
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: any) => {
     setStartX(e.clientX)
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: any) => {
     if(startX !== null){
       const currentX = e.clientX;
       const deltaX = currentX - startX;
@@ -64,9 +69,11 @@ const KeyCard = ({
 
   useEffect(() => {
     function getWithOfItem(){
-      const itemRefRect = itemRef.current.getBoundingClientRect()
-      const { width } = itemRefRect
-      setWidthRoot(width)
+      if (itemRef.current) {
+        const itemRefRect = itemRef.current.getBoundingClientRect();
+        const { width } = itemRefRect;
+        setWidthRoot(width);
+      }
     }
 
     getWithOfItem()
@@ -74,7 +81,7 @@ const KeyCard = ({
 
   return (
     <div ref={itemRef} className={styles.container}>
-      <div
+      <button
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -106,19 +113,21 @@ const KeyCard = ({
             <Spacer height={10} />
             <h2 className="tiny">Cuenta asociada</h2>
             <p>BankIA</p>
-            <div className="row">
-              <span>Ahorros 213********</span>
-              <Option icon={<EyeOff size={15} />} label={"Ver"} />
+            <div className="row gap">
+              <span>Ahorros {showData ? '21359123832' : '213********'} </span>
+              <Option icon={showData ? <EyeOff size={15} /> : <Eye size={15} /> } label={"Ver"} onClickFn={handleShowData} />
             </div>
             <h2 className="tiny">Estado</h2>
             <p>Apagado</p>
             <h2 className="tiny">Fecha de inscripcion</h2>
             <p>12 / Agosto / 2024</p>
+            <div className="row" style={{justifyContent: 'flex-end'}}>
             <Option
               icon={<Edit size={15} />}
               label={"Editar"}
               onClickFn={onEditFn}
             />
+            </div>
           </div>
           <hr />
           <div className={styles.dropdown}>
@@ -136,7 +145,7 @@ const KeyCard = ({
             )}
           </div>
         </div>
-      </div>
+      </button>
       <button className={`${styles.buttonDelete} row align-center gap bold`} onClick={onDeleteFn}>Eliminar <Trash /></button>
     </div>
   );

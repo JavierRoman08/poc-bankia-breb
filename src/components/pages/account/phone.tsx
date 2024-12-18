@@ -39,7 +39,7 @@ function AccountPhone({ route }: any) {
             <select
               className={styles.inputCountryCode__picker}
               value={countryCode}
-              onChange={(e) => setCountryCode(e.target.value)}
+              onChange={(e: any) => setCountryCode(e.target.value)}
             >
               <option value="+1">+1</option>
               <option value="+7">+7</option>

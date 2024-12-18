@@ -1,7 +1,8 @@
 import styles from "./qr.card.module.scss";
-import { EyeOff, Share2 } from "react-feather";
+import { Eye, EyeOff, Share2 } from "react-feather";
 import KeyType from "../key-type/key.type";
 import Option from "@/components/atoms/option/option";
+import { useState } from "react";
 
 interface QrCardProps {
   icon: any;
@@ -11,6 +12,11 @@ interface QrCardProps {
 }
 
 const QrCard = ({ icon, title, label, onShareFn }: QrCardProps) => {
+  const [showData, setShowData] = useState(false)
+
+  const handleShowData = () => {
+    setShowData(!showData)
+  }
 
   return (
     <div className={`${styles.card}`}>
@@ -30,8 +36,8 @@ const QrCard = ({ icon, title, label, onShareFn }: QrCardProps) => {
             <h2 className="tiny">Cuenta asociada</h2>
             <p>BankIA</p>
             <div className="row gap">
-              <span>Ahorros 213********</span>
-              <Option icon={<EyeOff size={15} />} label={""} />
+              <span>Ahorros {showData ? '21359123832' : '213********'} </span>
+              <Option icon={showData ? <EyeOff size={15} /> : <Eye size={15} /> } label={""} onClickFn={handleShowData} />
             </div>
           </div>
           <img src="/my-qr.png" alt="qr_code_key" className={styles.qrCode}/>

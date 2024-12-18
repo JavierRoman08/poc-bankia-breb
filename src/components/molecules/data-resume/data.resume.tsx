@@ -33,7 +33,6 @@ const DataResume = ({
       <p>{description}</p>
       <div className={`${styles.change} row`}>
         <p className="bold">{value}</p>
-
         {onClickFn ? (
           <button className={`link row bold`} onClick={onClickFn}>
             <p>Cambiar</p>

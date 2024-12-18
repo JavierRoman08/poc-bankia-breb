@@ -99,17 +99,17 @@ function History() {
         </p>
         <Spacer height={20} />
         <SelectField label="Motivo de devolucion">
-          <option value="opcion1">Opcion 1</option>
-          <option value="opcion2">Opcion 2</option>
-          <option value="opcion3">Opcion 3</option>
-          <option value="opcion4">Opcion 4</option>
+          <option value="opcion1">Error en la transacción</option>
+          <option value="opcion2">Cargos duplicados</option>
+          <option value="opcion3">Cancelación de servicios</option>
+          <option value="opcion4">Error de facturación</option>
         </SelectField>
         <Spacer height={10} />
         <RadioGroupField
           legend=""
           name="returnType"
           value={returnType}
-          onChange={(e) => setReturnType(e.target.value)}
+          onChange={(e: any) => setReturnType(e.target.value)}
         >
           <Radio value="total">Devolucion total</Radio>
           <Radio value="partial">Devolucion parcial</Radio>
@@ -118,7 +118,7 @@ function History() {
           <InputTextComponent
             type="number"
             value={valueAmount}
-            onChange={(e) => setValueAmount(e.target.value)}
+            onChange={(e: any) => setValueAmount(e.target.value)}
             placeholder="Escribe el monto"
             className={'input-basic'}
           />

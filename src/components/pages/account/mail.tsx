@@ -40,7 +40,7 @@ function AccountMail({ route }: any) {
             onChange={(e: any) => {
               setEmail(e.target.value);
             }}
-            placeholder="Ingresa tu correo"
+            placeholder="Escribe el correo electrónico"
             className={'input-basic'}
           />
         </AccountTypeTemplate>
